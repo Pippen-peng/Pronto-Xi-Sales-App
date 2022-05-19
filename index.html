@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/"/>
+    <meta name="generator" content="PRONTO-Xi Avenue">
+    <title>Pronto Xi Sales App</title>
+    <link
+    rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link
+    href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link
+    href="css/style.css" rel="stylesheet">
+  <!-- <link rel="stylesheet/less" type="text/css" href="css/style.less" />
+          <script>
+            less = {
+              async: true
+            };
+          </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.2/less.min.js" ></script> -->
+  </head>
+  <body>
+    <!-- Begin page content -->
+    <main class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar" class="active">
+        <h1>
+          <a href="index.html" class="logo">W</a>
+        </h1>
+        <div class="d-flex justify-content-center">
+          <button type="button" id="sidebarCollapse" class="btn btn-primary ">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+        </div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="#">
+              <span class="fa fa-home"></span>
+              Dashboard</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa fa-user"></span>
+              Quotes</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa fa-sticky-note"></span>
+              Tasks</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa fa-cogs"></span>
+              Storefront</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa fa-paper-plane"></span>
+              Deals</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa fa-paper-plane"></span>
+              Contacts</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa fa-paper-plane"></span>
+              Reports</a>
+          </li>
+        </ul>
+        <div class="footer"></div>
+      </nav>
+      <div id="content">
+        <div
+          class="header">
+          <!-- Fixed navbar -->
+          <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+              <div class="favourite-block col-1">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+              </div>
+              <div class="search-block col-5">
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+              <div class="col-3 nav-right-col">
+                <div class="message-block">
+                  <i class="fa fa-bell-o" aria-hidden="true"></i>
+                </div>
+                <div class="shopping-block">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  Storefront
+                </div>
+                <div class="user-block">
+                  <div class="user-name-block">TG</div>
+                  Minifood pty ltd
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div class="subnavbar py-2">
+            <div class="container-fluid d-flex align-items-md-center">
+              <div class="me-auto">
+                <h2>ON-0000136</h2>
+              </div>
+              <div class="ms-auto">
+                <button type="button" class="btn btn-secondary">EMAIL</button>
+                <button type="button" class="btn btn-secondary">PRINT</button>
+                <button type="button" class="btn btn-secondary">SAVE ORDER</button>
+                <button type="button" class="btn btn-secondary">REVIEW ORDER</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 p-md-5">
+          <div class="account-section card">
+            <div class="card-body">
+              <h2>Customer Account</h2>
+              <p>Choose the account name to check their
+              </p>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+          <div class="records-section">
+            <div class="records-header row  g-2 g-lg-3">
+              <div class="col-prod-select">
+                <input type="checkbox" id="selectall" name="selectall" value="selectall">
+              </div>
+              <div class="col-record-id">
+                No.
+              </div>
+              <div class="col-prod-img">
+                Img
+              </div>
+              <div class="col-prod-title">
+                Product
+              </div>
+              <div class="col-prod-sku">
+                Sku
+              </div>
+              <div class="col-prod-qty">
+                Qty
+              </div>
+              <div class="col-prod-uom">
+                Uom
+              </div>
+              <div class="col-prod-availability">
+                Available
+              </div>
+              <div class="col-prod-price">
+                Price
+              </div>
+              <div class="col-prod-discount">
+                Discount
+              </div>
+              <div class="col-prod-comment">
+                Comment
+              </div>
+              <div class="col-prod-del"></div>
+            </div>
+            <div class="record-item row  g-2 g-lg-3">
+              <div class="col-prod-select">
+                <input type="checkbox" id="selectall" name="selectall" value="selectall">
+              </div>
+              <div class="col-record-id">
+                1
+              </div>
+              <div class="col-prod-img">
+                <img src="img/image-solid.svg">
+              </div>
+              <div class="col-prod-title">
+                Mozzarella Cheese
+              </div>
+              <div class="col-prod-sku">
+                MO1234
+              </div>
+              <div class="col-prod-qty">
+                1
+              </div>
+              <div class="col-prod-uom">
+                Boxs
+              </div>
+              <div class="col-prod-availability">
+                35
+              </div>
+              <div class="col-prod-price">
+                $199
+              </div>
+              <div class="col-prod-discount">
+                10%
+              </div>
+              <div class="col-prod-comment">
+                <img src="img/message-solid.svg">
+              </div>
+              <div class="col-prod-del">
+                <img src="img/trash-can-solid.svg">
+              </div>
+            </div>
+            <div class="record-item row  g-2 g-lg-3">
+              <div class="col-prod-select">
+                <input type="checkbox" id="selectall" name="selectall" value="selectall">
+              </div>
+              <div class="col-record-id">
+                1
+              </div>
+              <div class="col-prod-img">
+                <img src="img/image-solid.svg">
+              </div>
+              <div class="col-prod-title">
+                Mozzarella Cheese
+              </div>
+              <div class="col-prod-sku">
+                MO1234
+              </div>
+              <div class="col-prod-qty">
+                1
+              </div>
+              <div class="col-prod-uom">
+                Boxs
+              </div>
+              <div class="col-prod-availability">
+                35
+              </div>
+              <div class="col-prod-price">
+                $199
+              </div>
+              <div class="col-prod-discount">
+                10%
+              </div>
+              <div class="col-prod-comment">
+                <img src="img/message-solid.svg">
+              </div>
+              <div class="col-prod-del">
+                <img src="img/trash-can-solid.svg">
+              </div>
+            </div>
+            <div class="record-item row  g-2 g-lg-3">
+              <div class="col-prod-select">
+                <input type="checkbox" id="selectall" name="selectall" value="selectall">
+              </div>
+              <div class="col-record-id">
+                1
+              </div>
+              <div class="col-prod-img">
+                <img src="img/image-solid.svg">
+              </div>
+              <div class="col-prod-title">
+                Mozzarella Cheese
+              </div>
+              <div class="col-prod-sku">
+                MO1234
+              </div>
+              <div class="col-prod-qty">
+                1
+              </div>
+              <div class="col-prod-uom">
+                Boxs
+              </div>
+              <div class="col-prod-availability">
+                35
+              </div>
+              <div class="col-prod-price">
+                $199
+              </div>
+              <div class="col-prod-discount">
+                10%
+              </div>
+              <div class="col-prod-comment">
+                <img src="img/message-solid.svg">
+              </div>
+              <div class="col-prod-del">
+                <img src="img/trash-can-solid.svg">
+              </div>
+            </div>
+            <div class="record-item row  g-2 g-lg-3">
+              <div class="col-prod-select">
+                <input type="checkbox" id="selectall" name="selectall" value="selectall">
+              </div>
+              <div class="col-record-id">
+                1
+              </div>
+              <div class="col-prod-img">
+                <img src="img/image-solid.svg">
+              </div>
+              <div class="col-prod-title">
+                Mozzarella Cheese
+              </div>
+              <div class="col-prod-sku">
+                MO1234
+              </div>
+              <div class="col-prod-qty">
+                1
+              </div>
+              <div class="col-prod-uom">
+                Boxs
+              </div>
+              <div class="col-prod-availability">
+                35
+              </div>
+              <div class="col-prod-price">
+                $199
+              </div>
+              <div class="col-prod-discount">
+                10%
+              </div>
+              <div class="col-prod-comment">
+                <img src="img/message-solid.svg">
+              </div>
+              <div class="col-prod-del">
+                <img src="img/trash-can-solid.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-add-record">
+          <div class="add-record-content d-flex">
+            <div class="col-prod-title">
+              <label for="exampleFormControlInput1" class="form-label">Product</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Name">
+            </div>
+            <div class="col-prod-qty">
+              <label for="exampleFormControlInput1" class="form-label">Quantity</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="col-prod-uom">
+              <label for="exampleFormControlInput1" class="form-label">Uom</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+
+            <div class="col-prod-price">
+              <label for="exampleFormControlInput1" class="form-label">Price</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="col-prod-discount">
+              <label for="exampleFormControlInput1" class="form-label">Discount</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="col-prod-comment">
+              <label for="exampleFormControlInput1" class="form-label">Comment</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
