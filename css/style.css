@@ -13,7 +13,7 @@ body {
   padding: 0;
 
 }
-.header .navbar .fa{
+.header .navbar .fal{
   font-size: 32px;
   color: #fff;
 }
@@ -49,7 +49,11 @@ body {
 .header .subnavbar {
   background-color: #f8f9fa;
 }
+.header .subnavbar .fas, .header .subnavbar .fad, .header .subnavbar .fal{
+  margin-right: 0.5rem;
 
+}
+/*Content style */
 .records-section {
   margin-top: 1rem;
   padding: 1rem;
