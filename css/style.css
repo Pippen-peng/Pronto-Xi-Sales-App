@@ -4,7 +4,9 @@ body {
   padding-top: 8.5rem; */
 }
 /*Header and Nav style */
-
+a:hover{
+  cursor: pointer;
+}
 .header .navbar{
   background: #ADADAD;
   padding: 0;
@@ -23,7 +25,6 @@ body {
   align-items: center;
 }
 .header .favourite-block {
-
   text-align: center;
 }
 .header .shopping-block, .header  .user-block{
@@ -45,12 +46,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #707070;
 }
 .header .subnavbar {
   background-color: #f8f9fa;
 }
 .header .subnavbar .fas, .header .subnavbar .fad, .header .subnavbar .fal{
   margin-right: 0.5rem;
+}
+.header .subnavbar h4{
+  margin: 0;
+
+}
+.header .subnavbar .convert-action-btn{
+  margin-left: 1rem;
 
 }
 /*Content style */
@@ -105,8 +114,8 @@ body {
 
 /*Sidebar Style */
 #sidebar {
-  min-width: 270px;
-  max-width: 270px;
+  min-width: 240px;
+  max-width: 240px;
   background: #CCCCCC;
   color: #fff;
   -webkit-transition: all 0.3s;
@@ -120,25 +129,17 @@ body {
   text-align: center;
 }
 
-#sidebar.active ul.components li {
-  font-size: 14px;
-}
-
 #sidebar.active ul.components li a {
   padding: 10px 0;
 }
 
 #sidebar.active ul.components li a span {
-  margin-right: 0;
-  display: block;
-  font-size: 24px;
+  display: none;
 }
 
 #sidebar.active .logo {
   padding: 10px 0;
 }
-
-
 
 #sidebar .logo {
   display: block;
@@ -189,21 +190,68 @@ body {
   padding: 10px 30px;
   display: block;
   color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
 }
 
 #sidebar ul li a span {
-  margin-right: 15px;
+  margin-left: 0.5rem;
 }
 
+
+#sidebar .sub-menu li{
+  list-style: none;
+}
+#sidebar .with-submenu:hover .sub-menu{
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+#sidebar .with-submenu .sub-menu{
+  background: #707070;
+  position: absolute;
+  left: 240px;
+  z-index: 10;
+  margin-left: 0;
+  height: 100%;
+  width: 180px;
+  top: 0;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+
+}
+#sidebar.active .with-submenu .sub-menu{
+
+  left: 80px;
+
+}
+#sidebar.active .sidebar-toggle{
+
+  display: flex;
+  justify-content: center;
+}
+#sidebar .sidebar-toggle{
+  display: flex;
+  justify-content: flex-end;
+}
+#sidebar .sidebar-toggle .sidebar-toggle-btn {
+  margin-right: 1rem;
+}
+#sidebar.active .sidebar-toggle .sidebar-toggle-btn {
+  margin-right: 0;
+}
 #content {
   width: 100%;
   padding: 0;
   min-height: 100vh;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
-  transition: all 0.3s; 
+  transition: all 0.3s;
   position: relative;
+}
+.content-inner{
+  overflow: auto;
+
 }
 /*Bottom Add record */
 .bottom-add-record{
@@ -212,9 +260,7 @@ body {
   bottom: 0;
   border: 1px solid rgba(0, 0, 0, .125);
   padding:1rem 3rem;
-}
-.bottom-add-record img {
-  max-width: 32px;
+  background: #fff;
 }
 
 .bottom-add-record .add-record-content>* {
