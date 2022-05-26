@@ -7,6 +7,13 @@ body {
 a:hover{
   cursor: pointer;
 }
+.btn-black{
+  background-color: #000;
+  color: #fff;
+}
+.btn.btn-black:hover{
+  color: #707070;
+}
 .header .navbar{
   background: #ADADAD;
   padding: 0;
@@ -50,6 +57,7 @@ a:hover{
 }
 .header .subnavbar {
   background-color: #f8f9fa;
+  border-bottom: 1px solid #ADADAD;
 }
 .header .subnavbar .fas, .header .subnavbar .fad, .header .subnavbar .fal{
   margin-right: 0.5rem;

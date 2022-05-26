@@ -134,10 +134,26 @@ const cartData = [{
 	price: 25,
 	discount: "20%",
 	comment: "Chect expire date "
-},
+}
 
 ];
 
+const OrderData = [{
+	id: '',
+	orderid: '',
+	productid: '',
+	title: '',
+	sku: '',
+	qty: '',
+	uom: '',
+	availability: '',
+	price: '',
+	discount: '',
+	comment:'' 
+
+}
+
+];
 
 var db;
 var request = window.indexedDB.open("newDatabase", 1);
@@ -163,6 +179,9 @@ request.onupgradeneeded = function(event) {
 	var objectStore3 = db.createObjectStore("cart", {
     keyPath: "id"
   });
+	var objectStore4 = db.createObjectStore("order", {
+    keyPath: "id"
+  });
 
   for (var i in customerData) {
     objectStore.add(customerData[i]);
@@ -171,7 +190,10 @@ request.onupgradeneeded = function(event) {
     objectStore2.add(productData[k]);
   }
 	for (var l in cartData) {
-    objectStore3.add(productData[l]);
+    objectStore3.add(cartData[l]);
+  }
+	for (var m in OrderData) {
+    objectStore4.add(OrderData[m]);
   }
 }
 
@@ -244,10 +266,11 @@ function loadTable() {
         '<div class="col-prod-img">' + ' <img src="img/image-solid.svg">' + '</div>' +
         '<div class="col-prod-title">' + cursor.value.title + '</div>' +
         '<div class="col-prod-sku">' + cursor.value.sku + '</div>' +
-        '<div class="col-prod-qty">' + cursor.value.qty + '</div>' + '<div class="col-prod-uom">' + cursor.value.uom + '</div>' +
+        '<div class="col-prod-qty"> <input type="text" class="form-control" id="CartProdQty" value="' + cursor.value.qty + '"></div>' + 
+				'<div class="col-prod-uom">' + cursor.value.uom + '</div>' +
         '<div class="col-prod-availability">' + cursor.value.availability + '</div>' +
-        '<div class="col-prod-price">' + cursor.value.price + '</div>' +
-        '<div class="col-prod-discount">' + cursor.value.discount + '</div>' +
+        '<div class="col-prod-price"> <input type="text" class="form-control" id="CartProdPrice" value="' + cursor.value.price + '"></div>' +
+        '<div class="col-prod-discount"><input type="text" class="form-control" id="CartProdDiscount" value="' + cursor.value.discount + '" ></div>' +
         '<div class="col-prod-comment">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div>' +
         '<div class="col-prod-del">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
         '</div>');
@@ -288,6 +311,42 @@ function addToCart() {
   request.onsuccess = function(event) {
     loadTable();
     clearButtons();
+  };
+
+  request.onerror = function(event) {
+    alert("error");
+  }
+}
+function addToOrder() {
+
+	// var objectStore = db.transaction("customer").objectStore("customer");
+  // objectStore.openCursor().onsuccess = function(event) {
+  //   var cursor = event.target.result;
+  //   if (cursor) {
+
+  //     company_names.push({ "label": cursor.value.company, "value": cursor.key });
+  //     cursor.continue(); // wait for next event
+
+  //   } else {
+
+  //   }
+  // };
+
+  var request = db.transaction(["order"], "readwrite").objectStore("order").add({
+    id: 2,
+    title: ProdTitle,
+    sku: ProdSku,
+    qty: ProdQty,
+    uom: ProdUom,
+    availability: ProdAvai,
+    price: ProdPrice,
+    discount: ProdDiscount,
+    comment: ProdComment
+  });
+
+
+  request.onsuccess = function(event) {
+    loadOrderTable();
   };
 
   request.onerror = function(event) {
