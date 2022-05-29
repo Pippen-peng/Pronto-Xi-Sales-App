@@ -120,6 +120,18 @@ a:hover{
   width: 18%;
 }
 
+
+.products-section .col-prod-select,
+.products-section .col-prod-del,
+.products-section .col-prod-sav {
+  width: 3%;
+}
+.products-section .col-prod-comment {
+  width: 15%;
+}
+.products-section .col-prod-title {
+  width: 12%;
+}
 /*Sidebar Style */
 #sidebar {
   min-width: 240px;
