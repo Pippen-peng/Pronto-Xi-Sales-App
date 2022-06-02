@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/" />
+  <meta name="generator" content="PRONTO-Xi Avenue">
+  <title>Pronto Xi Sales App</title>
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Flatpickr Datepicker CSS -->
+  <link rel="stylesheet" href="css/flatpickr.min.css">
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Begin page content -->
+  <main class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+      <h1>
+        <a href="index.html" class="logo">W</a>
+      </h1>
+      <div class="sidebar-toggle">
+        <button type="button" id="sidebarCollapse" class="btn sidebar-toggle-btn ">
+          <i class="fal fa-angle-double-right"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="#">
+            <i class="fal fa-cubes"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="with-submenu">
+          <a href="#">
+            <i class="fal fa-shopping-bag"></i>
+            <span>Orders</span>
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a href="#">Add Sale order</a>
+            </li>
+            <li>
+              <a href="#">View Sale order</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-calculator"></i>
+            <span>Quotes</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-tasks"></i>
+            <span>Tasks</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-store"></i>
+            <span>Storefront</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-stamp"></i>
+            <span>Deals</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-address-book"></i>
+            <span>
+              Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-chart-line"></i>
+            <span>
+              Reports</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer"></div>
+    </nav>
+
+    <div id="content">
+      <div class="header">
+        <div id="contenthere"><h2>Click button to load new content inside DIV box</h2></div>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md">
+          <div class="container-fluid">
+            <div class="favourite-block col-1">
+              <i class="fal fa-star"></i>
+            </div>
+            <div class="search-block col-5 d-flex">
+              <form class="w-100">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+              </form>
+              <i class="fal fa-plus-circle ms-2"></i>
+            </div>
+            <div class="col-3 nav-right-col">
+              <div class="message-block">
+                <i class="fal fa-bell"></i>
+              </div>
+              <div class="shopping-block">
+                <i class="fal fa-store"></i>
+                Storefront
+              </div>
+              <div class="user-block">
+                <div class="user-name-block">TG</div>
+                Minifood pty ltd
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="subnavbar py-2 px-5">
+          <div class="container-fluid d-flex align-items-md-center">
+            <div class="me-auto d-flex align-items-center">
+              <h2>All Orders</h2>
+            </div>
+            <div class="ms-auto">
+              <button type="button" class="btn btn-secondary" onclick="addToOrder()">
+                <i class="fas fa-save"></i>SAVE ALL CHANGES</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-inner p-4 p-md-5">
+        <div class="records-section products-section">
+          <div class="records-header row  g-2 g-lg-3">
+            <div class="col-prod-select">
+              <input type="checkbox" id="selectall" name="selectall" value="selectall">
+            </div>
+            <div class="col-record-id">
+              Order
+            </div>
+            <div class="col-prod-title">
+              Customer Name
+            </div>
+            <div class="col-prod-sku">
+              Status
+            </div>
+            <div class="col-prod-qty">
+              Total Amount
+            </div>
+            <div class="col-prod-uom">
+              Amount Paid
+            </div>
+            <div class="col-prod-availability">
+              Order Date
+            </div>
+            <div class="col-prod-price">
+              Payment Due
+            </div>
+            <div class="col-prod-discount">
+              Sales Rep
+            </div>
+            <div class="col-prod-comment">
+              Shipping By
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/autocomplete.js"></script>
+  <script src="js/flatpickr.js"></script>
+  <!-- <script src="js/main.js"></script> -->
+  <script>
+  /* Load all products */
+  var db;
+  var request = window.indexedDB.open("newDatabase", 1);
+
+  request.onerror = function(event) {
+    console.log("error: ");
+  };
+
+  request.onsuccess = function(event) {
+    db = request.result;
+    console.log("success: " + db);
+    loadTable();
+  };
+
+  request.onupgradeneeded = function(event) {
+    var db = event.target.result;
+
+    var objectStore4 = db.createObjectStore("order", {
+      keyPath: "id"
+    });
+
+    for (var m in OrderData) {
+      objectStore4.add(OrderData[m]);
+    }
+
+  }
+
+  function loadTable() {
+    var OrderList = "";
+    $('.record-item.row.g-2.g-lg-3').remove();
+
+    var objectStore4 = db.transaction("order").objectStore("order");
+    objectStore4.openCursor().onsuccess = function(event) {
+      var cursor = event.target.result;
+      if (cursor) {
+        OrderList = OrderList.concat('<div class="record-item row  g-2 g-lg-3">' +
+          '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div>' +
+          '<div class="col-record-id"><a href="order-details.html#' + cursor.value.orderId + '">' + cursor.value.orderId + '</a></div>' +
+          '<div class="col-prod-title">' + cursor.value.customerName + '</div>' +
+          '<div class="col-prod-sku"> </div>' +
+          '<div class="col-prod-qty"> </div>' +
+          '<div class="col-prod-uom"></div>' +
+          '<div class="col-prod-availability">'+ cursor.value.createDate + '</div>' +
+          '<div class="col-prod-price"> </div>' +
+          '<div class="col-prod-discount"></div>' +
+          '<div class="col-prod-comment">'+ cursor.value.shippingDate + '</div>' +
+          '</div>');
+
+        cursor.continue(); // wait for next event
+      } else {
+
+        $('.records-header').after(OrderList); // no more events
+
+      }
+    };
+
+  }
+/*Show order details */
+$(document).ready(function(){
+  $('#contenthere').load('order-details.html');
+    $('.col-record-id a').click(function(){
+      console.log('5555');
+        $('#contenthere').load('order-details.html');
+        console.log('6666');
+    });
+})
+  </script>
+</body>
+
+</html>

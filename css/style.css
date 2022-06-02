@@ -132,6 +132,16 @@ a:hover{
 .products-section .col-prod-title {
   width: 12%;
 }
+/* .record-item:nth-of-type(odd) {
+  background-color:#0000000d;
+} */
+.record-item:hover {
+  background-color:#0000000d;
+}
+.col-prod-del:hover .fal{
+  cursor: pointer;
+  color: #721c24;
+}
 /*Sidebar Style */
 #sidebar {
   min-width: 240px;

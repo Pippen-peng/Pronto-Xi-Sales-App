@@ -1,105 +1,100 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/"/>
-    <meta name="generator" content="PRONTO-Xi Avenue">
-    <title>Pronto Xi Sales App</title>
-    <link
-    rel="stylesheet" href="css/fontawesome.css">
-    <!-- Bootstrap core CSS -->
-    <link
-    href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/" />
+  <meta name="generator" content="PRONTO-Xi Avenue">
+  <title>Pronto Xi Sales App</title>
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Flatpickr Datepicker CSS -->
+  <link rel="stylesheet" href="css/flatpickr.min.css">
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-    <!-- Flatpickr Datepicker CSS -->
-    <link rel="stylesheet" href="css/flatpickr.min.css">
-    <!-- Custom styles -->
-    <link
-    href="css/style.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-    <!-- Begin page content -->
-    <main class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar" class="active">
-        <h1>
-          <a href="index.html" class="logo">W</a>
-        </h1>
-        <div class="sidebar-toggle">
-          <button type="button" id="sidebarCollapse" class="btn sidebar-toggle-btn ">
-            <i class="fal fa-angle-double-right"></i>
-            <span class="sr-only">Toggle Menu</span>
-          </button>
-        </div>
-        <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="#">
-              <i class="fal fa-cubes"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <li class="with-submenu">
-            <a href="#">
-              <i class="fal fa-shopping-bag"></i>
-              <span>Orders</span>
-            </a>
-            <ul class="sub-menu">
-              <li>
-                <a href="#">Add Sale order</a>
-              </li>
-              <li>
-                <a href="#">View Sale order</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-calculator"></i>
-              <span>Quotes</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-tasks"></i>
-              <span>Tasks</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-store"></i>
-              <span>Storefront</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-stamp"></i>
-              <span>Deals</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-address-book"></i>
-              <span>
-                Contacts</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-chart-line"></i>
-              <span>
-                Reports</span>
-            </a>
-          </li>
-        </ul>
-        <div class="footer"></div>
-      </nav>
-      <div id="content">
-        <div
-          class="header">
+<body>
+  <!-- Begin page content -->
+  <main class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+      <h1>
+        <a href="index.html" class="logo">W</a>
+      </h1>
+      <div class="sidebar-toggle">
+        <button type="button" id="sidebarCollapse" class="btn sidebar-toggle-btn ">
+          <i class="fal fa-angle-double-right"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="#">
+            <i class="fal fa-cubes"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="with-submenu">
+          <a href="#">
+            <i class="fal fa-shopping-bag"></i>
+            <span>Orders</span>
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a href="#">Add Sale order</a>
+            </li>
+            <li>
+              <a href="#">View Sale order</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-calculator"></i>
+            <span>Quotes</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-tasks"></i>
+            <span>Tasks</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-store"></i>
+            <span>Storefront</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-stamp"></i>
+            <span>Deals</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-address-book"></i>
+            <span>
+              Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-chart-line"></i>
+            <span>
+              Reports</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer"></div>
+    </nav>
+    <div id="content">
+      <form class="needs-validation" novalidate>
+        <div class="header">
           <!-- Fixed navbar -->
           <nav class="navbar navbar-expand-md">
             <div class="container-fluid">
@@ -107,11 +102,10 @@
                 <i class="fal fa-star"></i>
               </div>
               <div class="search-block col-5 d-flex">
-                <form class="w-100">
-                  <input
-                  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                </form>
+                <div class="w-100">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                </div>
                 <i class="fal fa-plus-circle ms-2"></i>
               </div>
               <div class="col-3 nav-right-col">
@@ -141,14 +135,14 @@
                   <i class="fas fa-envelope"></i>EMAIL</button>
                 <button type="button" class="btn btn-secondary">
                   <i class="fad fa-print"></i>PRINT</button>
-                <button type="button" class="btn btn-secondary">
+                <button type="submit" class="btn btn-secondary save-order">
                   <i class="fas fa-save"></i>SAVE ORDER</button>
-                <button type="button" class="btn btn-black" onclick="addToOrder()">REVIEW ORDER</button>
+                <button type="submit" class="btn btn-black" onclick="addToOrder()">REVIEW ORDER</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="content-inner p-4 p-md-5">
+        <div class="content-inner  p-4 p-md-5">
           <div class="row">
             <div class="account-section col-6">
               <div class="card ">
@@ -156,20 +150,21 @@
                   <h4>Customer Account</h4>
                   <p>Choose the account name to check their
                   </p>
-                  <div class="row">
+                  <div class="row ">
                     <div class="col-6">
                       <div class="mb-3 row">
                         <label for="search-account-name" class="col-sm-5 col-form-label">Company Name</label>
-                        <div class="col-sm-7">
-                          <form class="d-flex">
-                            <input id="search-account-name" class="form-control" type="search" placeholder="Search" aria-label="Search">
-                          </form>
+                        <div class="col-sm-7 position-relative">
+                          <input id="search-account-name" class="form-control" type="search" placeholder="Search" aria-label="Search" required>
+                          <div class="invalid-tooltip">
+                            Please select a Customer.
+                          </div>
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="customercode" class="col-sm-5 col-form-label">Customer Code</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="customercode">
+                        <div class="col-sm-7 ">
+                          <input type="text" class="form-control " id="customercode" required>
                         </div>
                       </div>
                     </div>
@@ -177,24 +172,23 @@
                       <div class="mb-3 row">
                         <label for="contactname" class="col-sm-5 col-form-label">Contact Name</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactname">
+                          <input type="text" class="form-control" id="contactname" required>
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="contactemail" class="col-sm-5 col-form-label">Contact Email</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactemail">
+                          <input type="text" class="form-control" id="contactemail" required>
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="contactphone" class="col-sm-5 col-form-label">Contact Phone</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactphone">
+                          <input type="text" class="form-control" id="contactphone" required>
                         </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -204,7 +198,7 @@
                   <h4>Shipping Information</h4>
                   <div class="mb-3 row">
                     <div class="col-sm-6">
-                      <select id="shippingaddress" class="form-select">
+                      <select id="shippingaddress" class="form-select" required>
                         <option value="delievery">Delivery</option>
                         <option value="pickup">Pick Up</option>
                       </select>
@@ -214,7 +208,7 @@
                         <label for="shippingdate" class="col-sm-4 col-form-label">Shipping By</label>
                         <div class="col-sm-8 ">
                           <div class="input-group">
-                            <input type="text" class="form-control date" id="ShippingDate">
+                            <input type="text" class="form-control date" id="ShippingDate" required>
                             <span class="input-group-text"><i class="fal fa-calendar-alt"></i></span>
                           </div>
                         </div>
@@ -230,7 +224,7 @@
                   </div>
                   <div class="mb-3 row">
                     <div class="col-12">
-                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control"></textarea>
+                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -274,63 +268,66 @@
               </div>
               <div class="col-prod-del"></div>
             </div>
+            <div id="record-bottom"></div>
           </div>
         </div>
-        <div class="bottom-add-record">
-          <a class="btn add-record-btn float-end" data-bs-toggle="collapse" href="#collapAddrecord" role="button" aria-expanded="false" aria-controls="collapAddrecord">
-            <i class="fal fa-chevron-square-up"></i>
-          </a>
-          <div id="collapAddrecord" class="collapse">
-            <div class="add-record-content d-flex ">
-              <div class="col-prod-id">
-                <label for="ProdID" class="form-label">ID</label>
-                <input type="text" class="form-control" id="ProdID">
-              </div>
-              <div class="col-prod-title">
-                <label for="ProdTitle" class="form-label">Product</label>
-                <input type="text" class="form-control" id="ProdTitle">
-              </div>
-              <div class="col-prod-sku">
+      </form>
+      <div class="bottom-add-record">
+        <a class="btn add-record-btn float-end" data-bs-toggle="collapse" href="#collapAddrecord" role="button" aria-expanded="false" aria-controls="collapAddrecord">
+          <i class="fal fa-chevron-square-up"></i>
+        </a>
+        <div id="collapAddrecord" class="collapse">
+          <div class="add-record-content d-flex ">
+            <input type="hidden" class="form-control" id="ProdSku">
+            <input type="hidden" class="form-control" id="ProdUom">
+            <input type="hidden" class="form-control" id="ProdAvai">
+            <div class="col-prod-title">
+              <label for="ProdTitle" class="form-label">Product</label>
+              <input type="text" class="form-control" id="ProdTitle">
+            </div>
+            <!-- <div class="col-prod-sku">
                 <label for="ProdSku" class="form-label">Sku</label>
-                <input type="text" class="form-control" id="ProdSku">
-              </div>
-              <div class="col-prod-qty">
-                <label for="ProdQty" class="form-label">Quantity</label>
-                <input type="text" class="form-control" id="ProdQty">
-              </div>
-              <div class="col-prod-uom">
+                <input type="hidden" class="form-control" id="ProdSku" readonly>
+              </div> -->
+            <div class="col-prod-qty">
+              <label for="ProdQty" class="form-label">Quantity</label>
+              <input type="text" class="form-control" id="ProdQty">
+            </div>
+            <!-- <div class="col-prod-uom">
                 <label for="ProdUom" class="form-label">Uom</label>
-                <input type="text" class="form-control" id="ProdUom">
-              </div>
-              <div class="col-prod-availability">
+                <input type="hidden" class="form-control" id="ProdUom" readonly>
+              </div> -->
+            <!-- <div class="col-prod-availability">
                 <label for="ProdAvai" class="form-label">Availability</label>
-                <input type="text" class="form-control" id="ProdAvai">
-              </div>
-              <div class="col-prod-price">
-                <label for="ProdPrice" class="form-label">Price</label>
-                <input type="text" class="form-control" id="ProdPrice">
-              </div>
-              <div class="col-prod-discount">
-                <label for="ProdDiscount" class="form-label">Discount</label>
-                <input type="text" class="form-control" id="ProdDiscount">
-              </div>
-              <div class="col-prod-comment">
-                <label for="ProdComment" class="form-label">Comment</label>
-                <input type="text" class="form-control" id="ProdComment">
-              </div>
-              <div>
-                <button type="button" class="btn btn-secondary" onclick="addToCart()">Add</button>
-              </div>
+                <input type="hidden" class="form-control" id="ProdAvai" readonly>
+              </div> -->
+            <div class="col-prod-price">
+              <label for="ProdPrice" class="form-label">Price</label>
+              <input type="text" class="form-control" id="ProdPrice">
+            </div>
+            <div class="col-prod-discount">
+              <label for="ProdDiscount" class="form-label">Discount</label>
+              <input type="text" class="form-control" id="ProdDiscount">
+            </div>
+            <div class="col-prod-comment">
+              <label for="ProdComment" class="form-label">Comment</label>
+              <input type="text" class="form-control" id="ProdComment">
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary" onclick="addToCart()">Add</button>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/autocomplete.js"></script>
-    <script src="js/flatpickr.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    </div>
+  </main>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/autocomplete.js"></script>
+  <script src="js/flatpickr.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  </script>
+</body>
 
 </html>
