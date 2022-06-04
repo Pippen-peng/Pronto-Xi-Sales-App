@@ -330,28 +330,14 @@ function addToCart() {
   }
 }
 
+/* Button is outside of form to teigger submit and validate function  */
+
+$( ".save-order" ).click(function() {
+  $( "#addToOrder" ).click();
+});
+
+
 /* Validate form  */
-// $( ".save-order" ).click(function(event) {
-//   //alert( "Handler for .click() called." );
-	
-// 	if (!$("#search-account-name")[0].checkValidity()) {
-// 		event.preventDefault()
-// 		event.stopPropagation()
-// 		alert($( "#search-account-name" )[0].checkValidity());
-// 		console.log(11111);
-// 	}else{
-
-// 		alert($( "#search-account-name" )[0].checkValidity());
-
-// 		console.log(2222);
-// 	}
-
-
-
-//   $( ".content-inner" ).addClass('was-validated');
-
-// });
-
 
 	// Example starter JavaScript for disabling form submissions if there are invalid fields
 	(function () {
@@ -367,16 +353,17 @@ function addToCart() {
 					if (!form.checkValidity()) {
 						event.preventDefault()
 						event.stopPropagation()
-						console.log(1111);
+					//	console.log(1111);
 					}else{
-
-						console.log(2222);
+					//	console.log(2222);
+            addToOrder();
 					}
 
 					form.classList.add('was-validated')
 				}, false)
 			})
 	})()
+
 
 function addToOrder() {
 
@@ -403,6 +390,7 @@ function addToOrder() {
 		addToOrderLines(orderId)
 	};
 }
+
 function addToOrderLines(orderId) {
 
 // 	const items = db.transaction("cart").objectStore("cart").getAll()

@@ -93,7 +93,6 @@
       <div class="footer"></div>
     </nav>
     <div id="content">
-      <form class="needs-validation" novalidate>
         <div class="header">
           <!-- Fixed navbar -->
           <nav class="navbar navbar-expand-md">
@@ -135,14 +134,15 @@
                   <i class="fas fa-envelope"></i>EMAIL</button>
                 <button type="button" class="btn btn-secondary">
                   <i class="fad fa-print"></i>PRINT</button>
-                <button type="submit" class="btn btn-secondary save-order">
+                <button type="button" class="btn btn-secondary ">
                   <i class="fas fa-save"></i>SAVE ORDER</button>
-                <button type="submit" class="btn btn-black" onclick="addToOrder()">REVIEW ORDER</button>
+                <button type="button" class="btn btn-black save-order" >REVIEW ORDER</button>
               </div>
             </div>
           </div>
         </div>
         <div class="content-inner  p-4 p-md-5">
+          <form class="needs-validation" novalidate>
           <div class="row">
             <div class="account-section col-6">
               <div class="card ">
@@ -208,7 +208,7 @@
                         <label for="shippingdate" class="col-sm-4 col-form-label">Shipping By</label>
                         <div class="col-sm-8 ">
                           <div class="input-group">
-                            <input type="text" class="form-control date" id="ShippingDate" required>
+                            <input type="text" class="form-control date" id="ShippingDate" required >
                             <span class="input-group-text"><i class="fal fa-calendar-alt"></i></span>
                           </div>
                         </div>
@@ -224,7 +224,7 @@
                   </div>
                   <div class="mb-3 row">
                     <div class="col-12">
-                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control" required></textarea>
+                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control" ></textarea>
                     </div>
                   </div>
                 </div>
@@ -270,8 +270,9 @@
             </div>
             <div id="record-bottom"></div>
           </div>
+          <button id="addToOrder" class="btn btn-primary invisible" type="submit">Submit form</button>
+         </form>
         </div>
-      </form>
       <div class="bottom-add-record">
         <a class="btn add-record-btn float-end" data-bs-toggle="collapse" href="#collapAddrecord" role="button" aria-expanded="false" aria-controls="collapAddrecord">
           <i class="fal fa-chevron-square-up"></i>
