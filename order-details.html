@@ -158,17 +158,17 @@
                   <div class="row">
                     <div class="col-6">
                       <div class="mb-3 row">
+                        <input type="hidden" class="form-control" id="companyId">
+
                         <label for="search-account-name" class="col-sm-5 col-form-label">Company Name</label>
                         <div class="col-sm-7">
-                          <form class="d-flex">
-                            <input id="search-account-name" class="form-control" type="search" placeholder="Search" aria-label="Search">
-                          </form>
+                            <input type="text" class="form-control" id="search-account-name" readonly>
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="customercode" class="col-sm-5 col-form-label">Customer Code</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="customercode">
+                          <input type="text" class="form-control" id="customercode" readonly>
                         </div>
                       </div>
                     </div>
@@ -176,19 +176,19 @@
                       <div class="mb-3 row">
                         <label for="contactname" class="col-sm-5 col-form-label">Contact Name</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactname">
+                          <input type="text" class="form-control" id="contactname" readonly>
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="contactemail" class="col-sm-5 col-form-label">Contact Email</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactemail">
+                          <input type="text" class="form-control" id="contactemail" readonly>
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="contactphone" class="col-sm-5 col-form-label">Contact Phone</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactphone">
+                          <input type="text" class="form-control" id="contactphone" readonly>
                         </div>
                       </div>
                     </div>
@@ -203,17 +203,15 @@
                   <h4>Shipping Information</h4>
                   <div class="mb-3 row">
                     <div class="col-sm-6">
-                      <select id="shippingaddress" class="form-select">
-                        <option value="delievery">Delivery</option>
-                        <option value="pickup">Pick Up</option>
-                      </select>
+                      <input type="text" class="form-control" id="deliveryMethod" readonly>
+
                     </div>
                     <div class="col-sm-6">
                       <div class="row">
                         <label for="shippingdate" class="col-sm-4 col-form-label">Shipping By</label>
                         <div class="col-sm-8 ">
                           <div class="input-group">
-                            <input type="text" class="form-control date" id="ShippingDate">
+                            <input type="text" class="form-control date" id="ShippingDate" readonly>
                             <span class="input-group-text"><i class="fal fa-calendar-alt"></i></span>
                           </div>
                         </div>
@@ -222,14 +220,13 @@
                   </div>
                   <div class="mb-3 row">
                     <div class="col-12">
-                      <select id="shippingaddress" class="form-select">
-                        <option value="">Level 3, 353 Burwood Highway Forest Hill, Victoria 3131</option>
-                      </select>
+                      <input type="text" class="form-control" id="shippingaddress" readonly>
+
                     </div>
                   </div>
                   <div class="mb-3 row">
                     <div class="col-12">
-                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control"></textarea>
+                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control" readonly></textarea>
                     </div>
                   </div>
                 </div>
@@ -258,9 +255,6 @@
               </div>
               <div class="col-prod-uom">
                 Uom
-              </div>
-              <div class="col-prod-availability">
-                Available
               </div>
               <div class="col-prod-price">
                 Price
@@ -301,14 +295,14 @@ request.onsuccess = function(event) {
   db = request.result;
   console.log("success: " + db);
   loadOrderDetails(orderId);
-  loadProducts(orderId)
+  loadProducts(orderId);
 };
 
 request.onupgradeneeded = function(event) {
   var db = event.target.result;
-  // var objectStore = db.createObjectStore("customer", {
-  //   keyPath: "id", autoIncrement:true
-  // });
+  var objectStore = db.createObjectStore("customer", {
+    keyPath: "id", autoIncrement:true
+  });
   // var objectStore2 = db.createObjectStore("product", {
   //   keyPath: "id", autoIncrement:true
   // });
@@ -324,51 +318,47 @@ request.onupgradeneeded = function(event) {
   }
 
 function loadOrderDetails(orderId) {
-
-var objectStore = db.transaction("order").objectStore("order");
-objectStore.openCursor().onsuccess = function(event) {
+var companyId='';
+var objectStore4 = db.transaction("order").objectStore("order");
+objectStore4.openCursor().onsuccess = function(event) {
   var cursor = event.target.result;
   if (cursor) {
     if (cursor.key = orderId) {
-      //console.log("value:", orderId);
-      // var customercode = cursor.value.code;
-      // var contactname = cursor.value.name;
-      // var contactemail = cursor.value.email;
-      // var contactphone = cursor.value.phone;
-      // //  console.log("customerName:", customerName);
-      // $('#customercode').val(customercode);
-       $('#contactname').val(cursor.value.customerName);
-      // $('#contactemail').val(contactemail);
-      // $('#contactphone').val(contactphone);
+
+       $('#deliveryMethod').val(cursor.value.deliveryMethod);
+       $('#ShippingDate').val(cursor.value.shippingDate);
+       $('#shippingaddress').val(cursor.value.shippingaddress);
+       $('#shippingnote').val(cursor.value.shippingnote);
+       $('#companyId').val(cursor.value.companyId);
+
     }
     cursor.continue(); // wait for next event
 
   } else {
-
+    loadCustomer();
   }
 };
 }
 
 function loadProducts(orderId) {
   var cartProducts = "";
-var objectStore = db.transaction("order_lines").objectStore("order_lines");
-objectStore.openCursor().onsuccess = function(event) {
+  var objectStore5 = db.transaction("order_lines").objectStore("order_lines");
+  objectStore5.openCursor().onsuccess = function(event) {
   var cursor = event.target.result;
   if (cursor) {
     if (cursor.value.orderId === orderId) {
 
-      console.log("value:", cursor.value.orderId);
+     // console.log("value:", cursor.value.orderId);
       cartProducts = cartProducts.concat('<div id="product'+ cursor.key +'" class="record-item row ">' +
-        '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div>' +
+        '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall" >' + '</div>' +
         '<div class="col-record-id">' + cursor.key + '</div>' +
         '<div class="col-prod-img">' + ' <img src="img/image-solid.svg">' + '</div>' +
         '<div class="col-prod-title">' + cursor.value.product + '</div>' +
         '<div class="col-prod-sku">' + cursor.value.sku + '</div>' +
-        '<div class="col-prod-qty"> <input type="text" class="form-control" id="CartProdQty" value="' + cursor.value.qty + '"></div>' + 
+        '<div class="col-prod-qty"> <input type="text" class="form-control" id="CartProdQty" value="' + cursor.value.qty + '" readonly></div>' + 
 				'<div class="col-prod-uom">' + cursor.value.uom + '</div>' +
-        '<div class="col-prod-availability">' + cursor.value.availability + '</div>' +
-        '<div class="col-prod-price"> <input type="text" class="form-control" id="CartProdPrice" value="' + cursor.value.price + '"></div>' +
-        '<div class="col-prod-discount"><input type="text" class="form-control" id="CartProdDiscount" value="' + cursor.value.discount + '" ></div>' +
+        '<div class="col-prod-price"> <input type="text" class="form-control" id="CartProdPrice" value="' + cursor.value.price + '" readonly></div>' +
+        '<div class="col-prod-discount"><input type="text" class="form-control" id="CartProdDiscount" value="' + cursor.value.discount + '" readonly ></div>' +
         '<div class="col-prod-comment">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div>' +
         '<div class="col-prod-del">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
         '</div>');
@@ -382,6 +372,36 @@ objectStore.openCursor().onsuccess = function(event) {
 }
 
 
+/* Autofill cutomer info  */
+
+function loadCustomer() {
+
+  var companyId = $('#companyId').val();
+
+var objectStore = db.transaction("customer").objectStore("customer");
+objectStore.openCursor().onsuccess = function(event) {
+  var cursor = event.target.result;
+  if (cursor) {
+    if (cursor.key = companyId) {
+      var customercompany = cursor.value.company;
+       var customercode = cursor.value.code;
+       var contactname = cursor.value.name;
+       var contactemail = cursor.value.email;
+       var contactphone = cursor.value.phone;
+      $('#search-account-name').val(customercompany);
+      $('#customercode').val(customercode);
+      $('#contactname').val(contactname);
+      $('#contactemail').val(contactemail);
+      $('#contactphone').val(contactphone);
+
+    }
+    cursor.continue(); // wait for next event
+
+  } else {
+
+  }
+};
+}
 
     </script>
   </body>

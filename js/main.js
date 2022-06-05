@@ -23,6 +23,14 @@ $(window).resize(function() {
 /* Datepicker  */
 var fp = flatpickr(".date", {
   dateFormat: "d/m/yy",
+  allowInput: true,
+  onOpen: function(selectedDates, dateStr, instance) {
+    $(instance.altInput).prop('readonly', true);
+  },
+  onClose: function(selectedDates, dateStr, instance) {
+    $(instance.altInput).prop('readonly', false);
+    $(instance.altInput).blur();
+  }
 
 })
 
@@ -140,22 +148,6 @@ const cartData = [{
 
 ];
 
-// const OrderData = [{
-// 	id: '',
-// 	orderid: '',
-// 	productid: '',
-// 	title: '',
-// 	sku: '',
-// 	qty: '',
-// 	uom: '',
-// 	availability: '',
-// 	price: '',
-// 	discount: '',
-// 	comment:'' 
-
-// }
-
-// ];
 
 var db;
 var request = window.indexedDB.open("newDatabase", 1);
@@ -370,25 +362,33 @@ function addToOrder() {
 
 	/* Add record to order table */
 	var	orderId="ON-"+ Date.now();
-
+	
 	/* Get current date for create order date */
 	var date=new Date();
 	var createDate=date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
-
+  var companyId = $('#companyId').val();
 	var customerName = $('#contactname').val();
-	var shippingDate = $('#ShippingDate').val();
+  var deliveryMethod = $('#deliveryMethod').val();
+	var shippingaddress = $('#shippingaddress').val();
+  var shippingnote = $('#shippingnote').val();
+  var shippingDate = $('#ShippingDate').val();
+
 	var request = db.transaction(["order"], "readwrite").objectStore("order").add({
 
     orderId:orderId,
-   // customerId: ProdSku,
+    companyId: companyId,
     customerName: customerName,
-		shippingDate: shippingDate,
+		deliveryMethod: deliveryMethod,
+    shippingDate: shippingDate,
+    shippingaddress: shippingaddress,
+    shippingnote: shippingnote,
     createDate: createDate,
-    //amount: ProdAvai,
   });
+
 	request.onsuccess = function(event) {
-		addToOrderLines(orderId)
+		//addToOrderLines(orderId);
 	};
+  addToOrderLines(orderId);
 }
 
 function addToOrderLines(orderId) {
@@ -478,11 +478,12 @@ function findCustomer(value) {
     if (cursor) {
       if (cursor.key = value) {
         console.log("value:", value);
+        var companyId = cursor.key;
         var customercode = cursor.value.code;
         var contactname = cursor.value.name;
         var contactemail = cursor.value.email;
         var contactphone = cursor.value.phone;
-        //  console.log("customerName:", customerName);
+        $('#companyId').val(companyId);
         $('#customercode').val(customercode);
         $('#contactname').val(contactname);
         $('#contactemail').val(contactemail);
