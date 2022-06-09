@@ -1,136 +1,237 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/"/>
-    <meta name="generator" content="PRONTO-Xi Avenue">
-    <title>Pronto Xi Sales App</title>
-    <link
-    rel="stylesheet" href="css/fontawesome.css">
-    <!-- Bootstrap core CSS -->
-    <link
-    href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <link
-    href="css/style.css" rel="stylesheet">
-  <!-- <link rel="stylesheet/less" type="text/css" href="css/style.less" />
-          <script>
-            less = {
-              async: true
-            };
-          </script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.2/less.min.js" ></script> -->
-  </head>
-  <body>
-    <!-- Begin page content -->
-    <main class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar" class="active">
-        <h1>
-          <a href="index.html" class="logo">W</a>
-        </h1>
-        <div class="d-flex justify-content-center">
-          <button type="button" id="sidebarCollapse" class="btn btn-primary ">
-            <i class="fa fa-bars"></i>
-            <span class="sr-only">Toggle Menu</span>
-          </button>
-        </div>
-        <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="#">
-              
-              <span class="fa fa-home"></span>
-              Dashboard</a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-user"></span>
-              Quotes</a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-sticky-note"></span>
-              Tasks</a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-cogs"></span>
-              Storefront</a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-paper-plane"></span>
-              Deals</a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-paper-plane"></span>
-              Contacts</a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-paper-plane"></span>
-              Reports</a>
-          </li>
-        </ul>
-        <div class="footer"></div>
-      </nav>
-      <div id="content">
-        <div
-          class="header">
-          <!-- Fixed navbar -->
-          <nav class="navbar navbar-expand-md">
-            <div class="container-fluid"> 
-              <div class="favourite-block col-1">
-                <i class="fal fa-star"></i>
-              </div>
-              <div class="search-block col-5 d-flex">
-                <form class="w-100">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                </form>
-                <i class="fal fa-plus-circle ms-2"></i>
-              </div>
-              <div class="col-3 nav-right-col">
-                <div class="message-block">
-                  <i class="fal fa-bell"></i>
-                </div>
-                <div class="shopping-block">
-                  <i class="fal fa-store"></i>
-                  Storefront
-                </div>
-                <div class="user-block">
-                  <div class="user-name-block">TG</div>
-                  Minifood pty ltd
-                </div>
-              </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/" />
+  <meta name="generator" content="PRONTO-Xi Avenue">
+  <title>Pronto Xi Sales App</title>
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Flatpickr Datepicker CSS -->
+  <link rel="stylesheet" href="css/flatpickr.min.css">
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Begin page content -->
+  <main class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+      <h1>
+        <a href="index.html" class="logo">W</a>
+      </h1>
+      <div class="sidebar-toggle">
+        <button type="button" id="sidebarCollapse" class="btn sidebar-toggle-btn ">
+          <i class="fal fa-angle-double-right"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="#">
+            <i class="fal fa-cubes"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="with-submenu">
+          <a href="order.html">
+            <i class="fal fa-shopping-bag"></i>
+            <span>Orders</span>
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a href="#">Add Sale order</a>
+            </li>
+            <li>
+              <a href="#">View Sale order</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="products.html">
+            <i class="fal fa-calculator"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-tasks"></i>
+            <span>Tasks</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-store"></i>
+            <span>Storefront</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-stamp"></i>
+            <span>Deals</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-address-book"></i>
+            <span>
+              Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-chart-line"></i>
+            <span>
+              Reports</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer"></div>
+    </nav>
+    <div id="content">
+      <div class="header">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md">
+          <div class="container-fluid">
+            <div class="favourite-block col-1">
+              <i class="fal fa-star"></i>
             </div>
-          </nav>
-          <div class="subnavbar py-2">
-            <div class="container-fluid d-flex align-items-md-center">
-              <div class="me-auto d-flex align-items-center">
-                <i class="fal fa-shopping-bag"></i><h4>ON-0000136</h4>
+            <div class="search-block col-5 d-flex">
+              <div class="w-100">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
               </div>
-              <div class="ms-auto">
-                <button type="button" class="btn btn-secondary"><i class="fas fa-envelope"></i>EMAIL</button>
-                <button type="button" class="btn btn-secondary"><i class="fad fa-print"></i>PRINT</button>
-                <button type="button" class="btn btn-secondary"><i class="fas fa-save"></i>SAVE ORDER</button>
-                <button type="button" class="btn btn-secondary">REVIEW ORDER</button>
+              <i class="fal fa-plus-circle ms-2"></i>
+            </div>
+            <div class="col-3 nav-right-col">
+              <div class="message-block">
+                <i class="fal fa-bell"></i>
+              </div>
+              <div class="shopping-block">
+                <i class="fal fa-store"></i>
+                Storefront
+              </div>
+              <div class="user-block">
+                <div class="user-name-block">TG</div>
+                Minifood pty ltd
               </div>
             </div>
           </div>
+        </nav>
+        <div class="subnavbar py-2 px-5">
+          <div class="container-fluid d-flex align-items-md-center">
+            <div class="me-auto d-flex align-items-center">
+              <i class="fal fa-shopping-bag"></i>
+              <h4>ON-0000136</h4>
+              <a class="convert-action-btn">Convert to quote</a>
+            </div>
+            <div class="ms-auto">
+              <button type="button" class="btn btn-secondary">
+                <i class="fas fa-envelope"></i>EMAIL</button>
+              <button type="button" class="btn btn-secondary">
+                <i class="fad fa-print"></i>PRINT</button>
+              <button type="button" class="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#saveOrderModal">
+                <i class="fas fa-save"></i>SAVE ORDER</button>
+              <button type="button" class="btn btn-black save-order">REVIEW ORDER</button>
+            </div>
+          </div>
         </div>
-        <div class="p-4 p-md-5">
-          <div class="account-section card">
-            <div class="card-body">
-              <h2>Customer Account</h2>
-              <p>Choose the account name to check their
-              </p>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+      </div>
+      <div class="content-inner  p-4 p-md-5">
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="account-section col-6">
+              <div class="card ">
+                <div class="card-body">
+                  <h4>Customer Account</h4>
+                  <p>Choose the account name to check their
+                  </p>
+                  <div class="row ">
+                    <div class="col-6">
+                      <div class="mb-3 row">
+                        <input type="hidden" class="form-control" id="companyId">
+                        <label for="search-account-name" class="col-sm-5 col-form-label">Company Name</label>
+                        <div class="col-sm-7 position-relative">
+                          <input id="search-account-name" class="form-control" type="search" placeholder="Search" aria-label="Search" required>
+                          <div class="invalid-tooltip">
+                            Please select a Customer.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="customercode" class="col-sm-5 col-form-label">Customer Code</label>
+                        <div class="col-sm-7 ">
+                          <input type="text" class="form-control " id="customercode" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="mb-3 row">
+                        <label for="contactname" class="col-sm-5 col-form-label">Contact Name</label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control" id="contactname" required>
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="contactemail" class="col-sm-5 col-form-label">Contact Email</label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control" id="contactemail" required>
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="contactphone" class="col-sm-5 col-form-label">Contact Phone</label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control" id="contactphone" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="shipping-section col-6">
+              <div class="card ">
+                <div class="card-body">
+                  <h4>Shipping Information</h4>
+                  <div class="mb-3 row">
+                    <div class="col-sm-6">
+                      <select id="deliveryMethod" class="form-select" required>
+                        <option value="delievery">Delivery</option>
+                        <option value="pickup">Pick Up</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <label for="shippingdate" class="col-sm-4 col-form-label">Shipping By</label>
+                        <div class="col-sm-8 ">
+                          <div class="input-group">
+                            <input type="text" class="form-control date" id="ShippingDate" required>
+                            <span class="input-group-text">
+                              <i class="fal fa-calendar-alt"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-12">
+                      <select id="shippingaddress" class="form-select">
+                        <option value="Level 3, 353 Burwood Highway Forest Hill, Victoria 3131">Level 3, 353 Burwood Highway Forest Hill, Victoria 3131</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-12">
+                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="records-section">
@@ -170,198 +271,664 @@
               </div>
               <div class="col-prod-del"></div>
             </div>
-            <div class="record-item row  g-2 g-lg-3">
-              <div class="col-prod-select">
-                <input type="checkbox" id="selectall" name="selectall" value="selectall">
-              </div>
-              <div class="col-record-id">
-                1
-              </div>
-              <div class="col-prod-img">
-                <img src="img/image-solid.svg">
-              </div>
-              <div class="col-prod-title">
-                Mozzarella Cheese
-              </div>
-              <div class="col-prod-sku">
-                MO1234
-              </div>
-              <div class="col-prod-qty">
-                1
-              </div>
-              <div class="col-prod-uom">
-                Boxs
-              </div>
-              <div class="col-prod-availability">
-                35
-              </div>
-              <div class="col-prod-price">
-                $199
-              </div>
-              <div class="col-prod-discount">
-                10%
-              </div>
-              <div class="col-prod-comment">
-                <i class="fad fa-comment"></i>
-              </div>
-              <div class="col-prod-del">
-                <i class="fal fa-trash-alt"></i>
-              </div>
+            <div id="record-bottom"></div>
+          </div>
+          <button id="addToOrder" class="btn btn-primary invisible" type="submit">Submit form</button>
+        </form>
+        <div class="subtotal-section col-lg-3 float-end">
+          <div class="row totalqty">
+            <div class="col-md-8 col-sm-6 title">
+              Quantity
             </div>
-            <div class="record-item row  g-2 g-lg-3">
-              <div class="col-prod-select">
-                <input type="checkbox" id="selectall" name="selectall" value="selectall">
-              </div>
-              <div class="col-record-id">
-                1
-              </div>
-              <div class="col-prod-img">
-                <img src="img/image-solid.svg">
-              </div>
-              <div class="col-prod-title">
-                Mozzarella Cheese
-              </div>
-              <div class="col-prod-sku">
-                MO1234
-              </div>
-              <div class="col-prod-qty">
-                1
-              </div>
-              <div class="col-prod-uom">
-                Boxs
-              </div>
-              <div class="col-prod-availability">
-                35
-              </div>
-              <div class="col-prod-price">
-                $199
-              </div>
-              <div class="col-prod-discount">
-                10%
-              </div>
-              <div class="col-prod-comment">
-                <i class="fad fa-comment"></i>
-              </div>
-              <div class="col-prod-del">
-                <i class="fal fa-trash-alt"></i>
-              </div>
-            </div>
-            <div class="record-item row  g-2 g-lg-3">
-              <div class="col-prod-select">
-                <input type="checkbox" id="selectall" name="selectall" value="selectall">
-              </div>
-              <div class="col-record-id">
-                1
-              </div>
-              <div class="col-prod-img">
-                <img src="img/image-solid.svg">
-              </div>
-              <div class="col-prod-title">
-                Mozzarella Cheese
-              </div>
-              <div class="col-prod-sku">
-                MO1234
-              </div>
-              <div class="col-prod-qty">
-                1
-              </div>
-              <div class="col-prod-uom">
-                Boxs
-              </div>
-              <div class="col-prod-availability">
-                35
-              </div>
-              <div class="col-prod-price">
-                $199
-              </div>
-              <div class="col-prod-discount">
-                10%
-              </div>
-              <div class="col-prod-comment">
-                <i class="fad fa-comment"></i>
-              </div>
-              <div class="col-prod-del">
-                <i class="fal fa-trash-alt"></i>
-              </div>
-            </div>
-            <div class="record-item row  g-2 g-lg-3">
-              <div class="col-prod-select">
-                <input type="checkbox" id="selectall" name="selectall" value="selectall">
-              </div>
-              <div class="col-record-id">
-                1
-              </div>
-              <div class="col-prod-img">
-                <img src="img/image-solid.svg">
-              </div>
-              <div class="col-prod-title">
-                Mozzarella Cheese
-              </div>
-              <div class="col-prod-sku">
-                MO1234
-              </div>
-              <div class="col-prod-qty">
-                1
-              </div>
-              <div class="col-prod-uom">
-                Boxs
-              </div>
-              <div class="col-prod-availability">
-                35
-              </div>
-              <div class="col-prod-price">
-                $199
-              </div>
-              <div class="col-prod-discount">
-                10%
-              </div>
-              <div class="col-prod-comment">
-                <i class="fad fa-comment"></i>
-              </div>
-              <div class="col-prod-del">
-                <i class="fal fa-trash-alt"></i>
-              </div>
+            <div id="totalqty" class="col-md-4 col-sm-6 text-end">
             </div>
           </div>
-        </div>
-        <div class="bottom-add-record">
-          <div class="add-record-content d-flex">
-            <div class="col-prod-title">
-              <label for="exampleFormControlInput1" class="form-label">Product</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Name">
+          <div class="row subtotal ">
+            <div class="col-md-8 col-sm-6 title">
+              Subtotal
             </div>
-            <div class="col-prod-qty">
-              <label for="exampleFormControlInput1" class="form-label">Quantity</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1">
+            <div id="subtotal" class="col-md-4 col-sm-6 text-end">
             </div>
-            <div class="col-prod-uom">
-              <label for="exampleFormControlInput1" class="form-label">Uom</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="row totaldiscount ">
+            <div class="col-md-8 col-sm-6 title">
+              Discount
             </div>
-
-            <div class="col-prod-price">
-              <label for="exampleFormControlInput1" class="form-label">Price</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1">
+            <div id="totaldiscount" class="col-md-4 col-sm-6 text-end">
             </div>
-            <div class="col-prod-discount">
-              <label for="exampleFormControlInput1" class="form-label">Discount</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="row totalshipping ">
+            <div class="col-md-8 col-sm-6 title">
+              Shipping
             </div>
-            <div class="col-prod-comment">
-              <label for="exampleFormControlInput1" class="form-label">Comment</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1">
+            <div id="totalshipping" class="col-md-4 col-sm-6 text-end">
             </div>
-            <div>
-              <button type="button" class="btn btn-secondary">Add</button>
+          </div>
+          <div class="row totalamount">
+            <div class="col-md-8 col-sm-6 title">
+              Total
+            </div>
+            <div id="totalamount" class="col-md-4 col-sm-6 text-end">
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+      <div class="bottom-add-record">
+        <a class="btn add-record-btn float-end" data-bs-toggle="collapse" href="#collapAddrecord" role="button" aria-expanded="false" aria-controls="collapAddrecord">
+          <i class="fal fa-chevron-square-up"></i>
+        </a>
+        <div id="collapAddrecord" class="collapse">
+          <div class="add-record-content d-flex ">
+            <input type="hidden" class="form-control" id="ProdSku">
+            <input type="hidden" class="form-control" id="ProdUom">
+            <input type="hidden" class="form-control" id="ProdAvai">
+            <div class="col-prod-title">
+              <label for="ProdTitle" class="form-label">Product</label>
+              <input type="text" class="form-control" id="ProdTitle">
+            </div>
+            <!-- <div class="col-prod-sku">
+              <label for="ProdSku" class="form-label">Sku</label>
+              <input type="hidden" class="form-control" id="ProdSku" readonly>
+            </div> -->
+            <div class="col-prod-qty">
+              <label for="ProdQty" class="form-label">Quantity</label>
+              <input type="text" class="form-control" id="ProdQty">
+            </div>
+            <!-- <div class="col-prod-uom">
+              <label for="ProdUom" class="form-label">Uom</label>
+              <input type="hidden" class="form-control" id="ProdUom" readonly>
+            </div> -->
+            <!-- <div class="col-prod-availability">
+              <label for="ProdAvai" class="form-label">Availability</label>
+              <input type="hidden" class="form-control" id="ProdAvai" readonly>
+            </div> -->
+            <div class="col-prod-price">
+              <label for="ProdPrice" class="form-label">Price</label>
+              <input type="text" class="form-control" id="ProdPrice">
+            </div>
+            <div class="col-prod-discount">
+              <label for="ProdDiscount" class="form-label">Discount</label>
+              <input type="text" class="form-control" id="ProdDiscount">
+            </div>
+            <div class="col-prod-comment">
+              <label for="ProdComment" class="form-label">Comment</label>
+              <input type="text" class="form-control" id="ProdComment">
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary" onclick="addToCart()">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+<div class="modal fade " id="saveOrderModal" tabindex="-1" aria-labelledby="saveOrderModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="modal-body text-center d-flex flex-column">
+        <div><i class="fas fa-wifi-slash"></i></div>
+
+        <h4>ORDER SAVED!</h4>
+        <p>You can confirm your order when the network is restored. <br>You won’t lose any information as the order will be saved under your OPEN ORDERS.</p>
+        <a href="order.html" class="btn btn-secondary ">
+           <span>GO TO ORDER LIST</span>
+        </a>
+        <a href="index.html" class="" data-bs-dismiss="modal" aria-label="Close">
+          <span>START A NEW ORDER</span>
+       </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </main>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/autocomplete.js"></script>
+  <script src="js/flatpickr.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+    /* Datepicker  */
+    var fp = flatpickr(".date", {
+      dateFormat: "d/m/yy",
+      allowInput: true,
+      onOpen: function(selectedDates, dateStr, instance) {
+        $(instance.altInput).prop('readonly', true);
+      },
+      onClose: function(selectedDates, dateStr, instance) {
+        $(instance.altInput).prop('readonly', false);
+        $(instance.altInput).blur();
+      }
+
+    })
+
+    // prefixes of implementation that we want to test
+    window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+    // prefixes of window.IDB objects
+    window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+    window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange
+
+    if (!window.indexedDB) {
+      window.alert("Your browser doesn't support a stable version of IndexedDB.")
+    }
+    //Autocomplete FOR  Customer NAME
+    const customerData = [{
+        id: 1,
+        company: "MYER",
+        name: "Tom Scott",
+        code: "myer01",
+        phone: "03 98877770",
+        email: "info@google.com.au",
+      }, {
+        id: 2,
+        company: "Commonwealth Bank",
+        name: "Michael Cater",
+        code: "comm02",
+        phone: "03 98854677",
+        email: "info@hotmail.com.au",
+      },
+      {
+        id: 3,
+        company: "ANZ",
+        name: "Vanessa Leevers",
+        code: "anz01",
+        phone: "03 98877744",
+        email: "info@gmail.com",
+      },
+      {
+        id: 4,
+        company: "Baby Bunting",
+        name: "Kim Hudson",
+        code: "bb01",
+        phone: "03 98877777",
+        email: "info@outlook.com",
+      }
+    ];
+
+    const productData = [{
+        id: 1,
+        title: "T-Shirt",
+        sku: "TS234",
+        qty: 10,
+        uom: "BOXS",
+        availability: 100,
+        price: 50,
+        discount: "20%",
+        comment: 'Chect expire date '
+
+      }, {
+        id: 2,
+        title: "Hoodie",
+        sku: "HO1234",
+        qty: 40,
+        uom: "BOXS",
+        availability: 70,
+        price: 25,
+        discount: "20%",
+        comment: "Chect expire date "
+      },
+      {
+        id: 3,
+        title: "Desk",
+        sku: "D2234",
+        qty: 40,
+        uom: "BOXS",
+        availability: 70,
+        price: 25,
+        discount: "20%",
+        comment: "Chect expire date "
+      },
+      {
+        id: 4,
+        title: "Blender",
+        sku: "BL1234",
+        qty: 40,
+        uom: "BOXS",
+        availability: 70,
+        price: 25,
+        discount: "20%",
+        comment: "Chect expire date "
+      }
+    ];
+    const cartData = [{
+        id: 1,
+        title: "T-Shirt",
+        sku: "TS234",
+        qty: 10,
+        uom: "BOXS",
+        availability: 100,
+        price: 50,
+        discount: "20%",
+        comment: 'Chect expire date '
+
+      }, {
+        id: 2,
+        title: "Hoodie",
+        sku: "HO1234",
+        qty: 40,
+        uom: "BOXS",
+        availability: 70,
+        price: 25,
+        discount: "20%",
+        comment: "Chect expire date "
+      }
+
+    ];
+
+
+    var db;
+    var request = window.indexedDB.open("newDatabase", 1);
+
+    request.onerror = function(event) {
+      console.log("error: ");
+    };
+
+    request.onsuccess = function(event) {
+      db = request.result;
+      console.log("success: " + db);
+      loadTable();
+    };
+
+    request.onupgradeneeded = function(event) {
+      var db = event.target.result;
+      var objectStore = db.createObjectStore("customer", {
+        keyPath: "id",
+        autoIncrement: true
+      });
+      var objectStore2 = db.createObjectStore("product", {
+        keyPath: "id",
+        autoIncrement: true
+      });
+      var objectStore3 = db.createObjectStore("cart", {
+        keyPath: "id",
+        autoIncrement: true
+      });
+      var objectStore4 = db.createObjectStore("order", {
+        keyPath: "id",
+        autoIncrement: true
+      });
+      var objectStore5 = db.createObjectStore("order_lines", {
+        keyPath: "id",
+        autoIncrement: true
+      });
+
+      for (var i in customerData) {
+        objectStore.add(customerData[i]);
+      }
+      for (var k in productData) {
+        objectStore2.add(productData[k]);
+      }
+      for (var l in cartData) {
+        objectStore3.add(cartData[l]);
+      }
+      // for (var m in OrderData) {
+      //   objectStore4.add(OrderData[m]);
+      // }
+    }
+
+    function loadTable() {
+
+      /* Autocomplete Get Account details */
+      var company_names = [];
+      var objectStore = db.transaction("customer").objectStore("customer");
+      objectStore.openCursor().onsuccess = function(event) {
+        var cursor = event.target.result;
+        if (cursor) {
+
+          company_names.push({ "label": cursor.value.company, "value": cursor.key });
+          cursor.continue(); // wait for next event
+
+        } else {
+
+          const field2 = document.getElementById('search-account-name');
+          const ac2 = new Autocomplete(field2, {
+            data: [{ label: "I'm a label", value: 42 }],
+            maximumItems: 5,
+            threshold: 1,
+            onSelectItem: ({ label, value }) => {
+            // console.log("user selected:", label, value);
+              findCustomer(value);
+            }
+          });
+          ac2.setData(company_names);
+        }
+      };
+
+      /* Autocomplete Get Product details */
+      var products_names = [];
+      var objectStore2 = db.transaction("product").objectStore("product");
+      objectStore2.openCursor().onsuccess = function(event) {
+        var cursor = event.target.result;
+        if (cursor) {
+          products_names.push({ "label": cursor.value.title, "value": cursor.key });
+          cursor.continue(); // wait for next event
+        } else {
+
+          //Autocomplete FOR  PRODUCT NAME
+          const field = document.getElementById('ProdTitle');
+          const ac = new Autocomplete(field, {
+            data: [{ label: "I'm a label", value: 42 }],
+            maximumItems: 5,
+            threshold: 1,
+            onSelectItem: ({ label, value }) => {
+             // console.log("user selected:", label, value);
+              findProduct(value);
+            }
+          });
+
+          ac.setData(products_names);
+          //  console.log(ac.setData);
+        }
+      };
+
+      /* Create cart content */
+      var cartProducts = "";
+      var order_products = [];
+      $('.record-item.row').remove();
+
+      var objectStore3 = db.transaction("cart").objectStore("cart");
+
+      objectStore3.openCursor().onsuccess = function(event) {
+        var cursor = event.target.result;
+        if (cursor) {
+          cartProducts = cartProducts.concat('<div id="product' + cursor.key + '" class="record-item row ">' +
+            '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div>' +
+            '<div class="col-record-id">' + cursor.key + '</div>' +
+            '<div class="col-prod-img">' + ' <img src="img/image-solid.svg">' + '</div>' +
+            '<div class="col-prod-title">' + cursor.value.title + '</div>' +
+            '<div class="col-prod-sku">' + cursor.value.sku + '</div>' +
+            '<div class="col-prod-qty"> <input type="text" class="form-control CartProdQty"  value="' + cursor.value.qty + '"></div>' +
+            '<div class="col-prod-uom">' + cursor.value.uom + '</div>' +
+            '<div class="col-prod-availability">' + cursor.value.availability + '</div>' +
+            '<div class="col-prod-price"> <input type="text" class="form-control CartProdPrice"  value="' + cursor.value.price + '"></div>' +
+            '<div class="col-prod-discount"><input type="text" class="form-control CartProdDiscount"  value="' + cursor.value.discount + '" ></div>' +
+            '<div class="col-prod-comment">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div>' +
+            '<div class="col-prod-del">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
+            '</div>');
+          order_products.push({ "name": cursor.value.title, "id": cursor.key });
+          cursor.continue(); // wait for next event
+
+        } else {
+          $('.records-header').after(cartProducts); // no more events
+          calculateTotal();
+        }
+
+      };
+
+    }
+
+    /* Update total when change qty price etc */
+
+    $(".records-section").on("input", function() {
+      calculateTotal();
+    });
+
+    function calculateTotal() {
+
+      /* calculate totalqty */
+      var totalqty = 0;
+
+      $('.CartProdQty').each(function() {
+        totalqty += parseFloat(this.value);
+      });
+
+      $('#totalqty').html(totalqty);
+
+      /* calculate subTotal and  totaldiscount*/
+      var subtotal = 0;
+      var totaldiscount = 0;
+      var totalshipping = 0;
+
+      $('.record-item').each(function() {
+        subtotal += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val();
+        totaldiscount += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val() * parseFloat($(this).find(".CartProdDiscount").val()) / 100;
+      });
+
+      var totalamount = subtotal - totaldiscount - totalshipping;
+      $('#subtotal').html(subtotal);
+      $('#totaldiscount').html(totaldiscount);
+      $('#totalshipping').html(totalshipping);
+      $('#totalamount').html(totalamount);
+    }
+
+    function addToCart() {
+
+      var ProdTitle = $('#ProdTitle').val();
+      var ProdSku = $('#ProdSku').val();
+      var ProdQty = $('#ProdQty').val();
+      var ProdUom = $('#ProdUom').val();
+      var ProdAvai = $('#ProdAvai').val();
+      var ProdPrice = $('#ProdPrice').val();
+      var ProdDiscount = $('#ProdDiscount').val();
+      var ProdComment = $('#ProdComment').val();
+
+      /* ID is autoIncrement */
+      var request = db.transaction(["cart"], "readwrite").objectStore("cart").add({
+        title: ProdTitle,
+        sku: ProdSku,
+        qty: ProdQty,
+        uom: ProdUom,
+        availability: ProdAvai,
+        price: ProdPrice,
+        discount: ProdDiscount,
+        comment: ProdComment
+      });
+
+
+      request.onsuccess = function(event) {
+        loadTable();
+        clearButtons();
+        /* Move to latest record*/
+        $('.content-inner').animate({
+          scrollTop: $("#record-bottom").offset().top
+        }, 2000);
+      };
+
+      request.onerror = function(event) {
+        alert("error");
+      }
+    }
+
+    /* Button is outside of form to teigger submit and validate function  */
+
+    $(".save-order").click(function() {
+      $("#addToOrder").click();
+    });
+
+
+    /* Validate form  */
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function(form) {
+          form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+              //  console.log(1111);
+            } else {
+              //  console.log(2222);
+              $("#saveOrderModal").modal('show');
+              addToOrder();
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+
+
+    function addToOrder() {
+
+
+      /* Add record to order table */
+      var orderId = "ON-" + Date.now();
+
+      /* Get current date for create order date */
+      var date = new Date();
+      var createDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+      var companyId = $('#companyId').val();
+      var customerName = $('#contactname').val();
+      var deliveryMethod = $('#deliveryMethod').val();
+      var shippingaddress = $('#shippingaddress').val();
+      var shippingnote = $('#shippingnote').val();
+      var shippingDate = $('#ShippingDate').val();
+      var totalamount = parseFloat($('#totalamount').text());
+      var paidamount = totalamount;
+
+      var request = db.transaction(["order"], "readwrite").objectStore("order").add({
+
+        orderId: orderId,
+        companyId: companyId,
+        customerName: customerName,
+        deliveryMethod: deliveryMethod,
+        shippingDate: shippingDate,
+        shippingaddress: shippingaddress,
+        shippingnote: shippingnote,
+        createDate: createDate,
+        totalamount: totalamount,
+        paidamount: paidamount,
+      });
+
+      request.onsuccess = function(event) {
+
+       // console.log("addToOrder onsuccess");
+      };
+      addToOrderLines(orderId);
+      
+    }
+
+    function addToOrderLines(orderId) {
+
+      /* Add products to order line table  */
+
+      function query(db, myCallbackFunction) {
+        const tx = db.transaction('cart');
+        const store = tx.objectStore('cart');
+        const request = store.getAll();
+
+        request.onsuccess = event => {
+          // denote the array of objects with a variable
+          // here, event.target is === to request, can use either one
+          const data = event.target.result;
+          // pass the data to the callback function so that caller can
+          // access it
+          myCallbackFunction(data);
+        };
+      }
+
+      // Open the database and then run the query
+      var openRequest = indexedDB.open('newDatabase');
+      openRequest.onsuccess = event => {
+        query(db, (data = []) => {
+          // This gets called when the query has run with the loaded
+          // data
+          //console.log('received %d rows of data', data.length);
+          for (const row of data) {
+            //console.log('object:', row);
+
+            var request = db.transaction(["order_lines"], "readwrite").objectStore("order_lines").add({
+              orderId: orderId,
+              product: row.title,
+              sku: row.sku,
+              qty: row.qty,
+              uom: row.uom,
+              price: row.price,
+              discount: row.discount,
+              comment: row.comment,
+            });
+            request.onsuccess = function(event) {
+
+            };
+          }
+        });
+      };
+    }
+
+    function deleteCartProduct(clicked_id) {
+      /* convert id to integer */
+      var ProdID = parseInt(clicked_id);
+      var request = db.transaction(["cart"], "readwrite").objectStore("cart").delete(ProdID);
+      request.onsuccess = function(event) {
+        loadTable();
+      };
+    }
+
+    function clearButtons() {
+
+      $('.add-record-content input').val("");
+
+    }
+    /* Autofill cutomer info  */
+    function findCustomer(value) {
+
+      var objectStore = db.transaction("customer").objectStore("customer");
+      objectStore.openCursor().onsuccess = function(event) {
+        var cursor = event.target.result;
+        if (cursor) {
+          if (cursor.key = value) {
+            //console.log("value:", value);
+            var companyId = cursor.key;
+            var customercode = cursor.value.code;
+            var contactname = cursor.value.name;
+            var contactemail = cursor.value.email;
+            var contactphone = cursor.value.phone;
+            $('#companyId').val(companyId);
+            $('#customercode').val(customercode);
+            $('#contactname').val(contactname);
+            $('#contactemail').val(contactemail);
+            $('#contactphone').val(contactphone);
+          }
+          cursor.continue(); // wait for next event
+
+        } else {
+
+        }
+      };
+    }
+    /* Autofill product info on add to cart */
+    function findProduct(value) {
+
+      var objectStore = db.transaction("product").objectStore("product");
+      objectStore.openCursor().onsuccess = function(event) {
+        var cursor = event.target.result;
+        if (cursor) {
+          if (cursor.key = value) {
+            //console.log("value:", value);
+            var ProdSku = cursor.value.sku;
+            var ProdUom = cursor.value.uom;
+            var ProdAvai = cursor.value.availability;
+            var ProdPrice = cursor.value.price;
+            var ProdDiscount = cursor.value.discount;
+            var ProdComment = cursor.value.comment;
+            //  console.log("customerName:", customerName);
+            $('#ProdSku').val(ProdSku);
+            $('#ProdUom').val(ProdUom);
+            $('#ProdAvai').val(ProdAvai);
+            $('#ProdPrice').val(ProdPrice);
+            $('#ProdDiscount').val(ProdDiscount);
+            $('#ProdComment').val(ProdComment);
+          }
+          cursor.continue(); // wait for next event
+
+        } else {
+
+        }
+      };
+    }
+  </script>
+</body>
 
 </html>

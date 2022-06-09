@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/" />
   <meta name="generator" content="PRONTO-Xi Avenue">
-  <title>Pronto Xi Sales App</title>
+  <title>Orders - Pronto Xi Sales App</title>
   <link rel="stylesheet" href="css/fontawesome.css">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
           </a>
         </li>
         <li class="with-submenu">
-          <a href="#">
+          <a href="order.html">
             <i class="fal fa-shopping-bag"></i>
             <span>Orders</span>
           </a>
@@ -52,9 +52,9 @@
           </ul>
         </li>
         <li>
-          <a href="#">
+          <a href="products.html">
             <i class="fal fa-calculator"></i>
-            <span>Quotes</span>
+            <span>Products</span>
           </a>
         </li>
         <li>
@@ -95,7 +95,6 @@
 
     <div id="content">
       <div class="header">
-        <div id="contenthere"><h2>Click button to load new content inside DIV box</h2></div>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md">
           <div class="container-fluid">
@@ -137,8 +136,8 @@
         </div>
       </div>
       <div class="content-inner p-4 p-md-5">
-        <div class="records-section products-section">
-          <div class="records-header row  g-2 g-lg-3">
+        <div class="records-section order-list-section">
+          <div class="records-header row">
             <div class="col-prod-select">
               <input type="checkbox" id="selectall" name="selectall" value="selectall">
             </div>
@@ -178,7 +177,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/autocomplete.js"></script>
   <script src="js/flatpickr.js"></script>
-  <!-- <script src="js/main.js"></script> -->
+  <script src="js/main.js"></script>
   <script>
   /* Load all products */
   var db;
@@ -215,13 +214,13 @@
     objectStore4.openCursor().onsuccess = function(event) {
       var cursor = event.target.result;
       if (cursor) {
-        OrderList = OrderList.concat('<div class="record-item row  g-2 g-lg-3">' +
+        OrderList = OrderList.concat('<div class="record-item row ">' +
           '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div>' +
           '<div class="col-record-id"><a href="order-details.html#' + cursor.value.orderId + '">' + cursor.value.orderId + '</a></div>' +
           '<div class="col-prod-title">' + cursor.value.customerName + '</div>' +
           '<div class="col-prod-sku"> </div>' +
-          '<div class="col-prod-qty"> </div>' +
-          '<div class="col-prod-uom"></div>' +
+          '<div class="col-prod-qty">' + cursor.value.totalamount + ' </div>' +
+          '<div class="col-prod-uom">' + cursor.value.paidamount + '</div>' +
           '<div class="col-prod-availability">'+ cursor.value.createDate + '</div>' +
           '<div class="col-prod-price"> </div>' +
           '<div class="col-prod-discount"></div>' +
@@ -237,15 +236,7 @@
     };
 
   }
-/*Show order details */
-$(document).ready(function(){
-  $('#contenthere').load('order-details.html');
-    $('.col-record-id a').click(function(){
-      console.log('5555');
-        $('#contenthere').load('order-details.html');
-        console.log('6666');
-    });
-})
+
   </script>
 </body>
 

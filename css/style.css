@@ -102,6 +102,11 @@ a:hover{
   padding: 0.5rem;
 }
 
+.order-list-section .records-header>*,
+.order-list-section .record-item>* {
+  width: 10%;
+}
+
 .records-section .col-prod-select,
 .records-section .col-prod-del {
   width: 4%;
@@ -120,7 +125,6 @@ a:hover{
   width: 18%;
 }
 
-
 .products-section .col-prod-select,
 .products-section .col-prod-del,
 .products-section .col-prod-sav {
@@ -135,12 +139,44 @@ a:hover{
 /* .record-item:nth-of-type(odd) {
   background-color:#0000000d;
 } */
-.record-item:hover {
+.records-section .record-item:hover {
   background-color:#0000000d;
 }
-.col-prod-del:hover .fal{
+.records-section .col-prod-del:hover .fal{
   cursor: pointer;
   color: #721c24;
+}
+
+.content-inner .subtotal-section{
+ background-color: #F5F5F5;
+ padding: 1rem;
+}
+.content-inner .subtotal-section .row{
+  border-bottom: 1px solid #CCCCCC;
+  padding: 0.5rem 0;
+}
+.content-inner .subtotal-section .totalamount{
+  font-size: 18px;
+  font-weight: bold;
+}
+.order-list-section .col-prod-title{
+  width: 10%;
+}
+.order-list-section .col-record-id{
+  width: 16%;
+}
+.order-details-section .col-record-id{
+  width: 14%;
+}
+/*Save order modal */
+#saveOrderModal .modal-body{
+  padding: 3rem;
+
+}
+#saveOrderModal .fas{
+  font-size:160px;
+
+
 }
 /*Sidebar Style */
 #sidebar {

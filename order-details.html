@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/"/>
     <meta name="generator" content="PRONTO-Xi Avenue">
-    <title>Pronto Xi Sales App</title>
+    <title>Order Details - Pronto Xi Sales App</title>
     <link
     rel="stylesheet" href="css/fontawesome.css">
     <!-- Bootstrap core CSS -->
@@ -43,7 +43,7 @@
             </a>
           </li>
           <li class="with-submenu">
-            <a href="#">
+            <a href="order.html">
               <i class="fal fa-shopping-bag"></i>
               <span>Orders</span>
             </a>
@@ -57,9 +57,9 @@
             </ul>
           </li>
           <li>
-            <a href="#">
+            <a href="products.html">
               <i class="fal fa-calculator"></i>
-              <span>Quotes</span>
+              <span>Products</span>
             </a>
           </li>
           <li>
@@ -133,16 +133,16 @@
             <div class="container-fluid d-flex align-items-md-center">
               <div class="me-auto d-flex align-items-center">
                 <i class="fal fa-shopping-bag"></i>
-                <h4>Order details for######</h4>
+                <h4>Order details for <span id="titleorderID"></span><h4>
               </div>
               <div class="ms-auto">
                 <button type="button" class="btn btn-secondary">
                   <i class="fas fa-envelope"></i>EMAIL</button>
                 <button type="button" class="btn btn-secondary">
                   <i class="fad fa-print"></i>PRINT</button>
-                <button type="button" class="btn btn-secondary">
+                <!-- <button type="button" class="btn btn-secondary">
                   <i class="fas fa-save"></i>SAVE ORDER</button>
-                <button type="button" class="btn btn-black" onclick="addToOrder()">REVIEW ORDER</button>
+                <button type="button" class="btn btn-black" onclick="addToOrder()">REVIEW ORDER</button> -->
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@
               </div>
             </div>
           </div>
-          <div class="records-section">
+          <div class="records-section order-details-section">
             <div class="records-header row  g-2 g-lg-3">
               <div class="col-prod-select">
                 <input type="checkbox" id="selectall" name="selectall" value="selectall">
@@ -269,6 +269,43 @@
             </div>
             <div id="record-bottom"></div>
           </div>
+          <div class="subtotal-section col-lg-3 float-end mt-3">
+            <div class="row totalqty">
+              <div class="col-md-8 col-sm-6 title">
+                Quantity
+              </div>
+              <div id="totalqty" class="col-md-4 col-sm-6 text-end">
+              </div>
+            </div>
+            <div class="row subtotal ">
+              <div class="col-md-8 col-sm-6 title">
+                Subtotal
+              </div>
+              <div id="subtotal" class="col-md-4 col-sm-6 text-end">
+              </div>
+            </div>
+            <div class="row totaldiscount ">
+              <div class="col-md-8 col-sm-6 title">
+                Discount
+              </div>
+              <div id="totaldiscount" class="col-md-4 col-sm-6 text-end">
+              </div>
+            </div>
+            <div class="row totalshipping ">
+              <div class="col-md-8 col-sm-6 title">
+                Shipping
+              </div>
+              <div id="totalshipping" class="col-md-4 col-sm-6 text-end">
+              </div>
+            </div>
+            <div class="row totalamount">
+              <div class="col-md-8 col-sm-6 title">
+                Total
+              </div>
+              <div id="totalamount" class="col-md-4 col-sm-6 text-end">
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -277,7 +314,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/autocomplete.js"></script>
     <script src="js/flatpickr.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
 
     <script>
       var url =  $(location).attr('href').replace(/\/+$/,''), //rtrim `/`
@@ -296,6 +333,7 @@ request.onsuccess = function(event) {
   console.log("success: " + db);
   loadOrderDetails(orderId);
   loadProducts(orderId);
+  $('#titleorderID').html(orderId);
 };
 
 request.onupgradeneeded = function(event) {
@@ -324,12 +362,15 @@ objectStore4.openCursor().onsuccess = function(event) {
   var cursor = event.target.result;
   if (cursor) {
     if (cursor.key = orderId) {
-
        $('#deliveryMethod').val(cursor.value.deliveryMethod);
        $('#ShippingDate').val(cursor.value.shippingDate);
        $('#shippingaddress').val(cursor.value.shippingaddress);
        $('#shippingnote').val(cursor.value.shippingnote);
        $('#companyId').val(cursor.value.companyId);
+       $('#subtotal').html(cursor.value.subtotal);
+       $('#totaldiscount').html(cursor.value.totaldiscount);
+       $('#totalshipping').html(cursor.value.totalshipping);
+      // $('#totalamount').html(cursor.value.totalamount);
 
     }
     cursor.continue(); // wait for next event
@@ -355,10 +396,10 @@ function loadProducts(orderId) {
         '<div class="col-prod-img">' + ' <img src="img/image-solid.svg">' + '</div>' +
         '<div class="col-prod-title">' + cursor.value.product + '</div>' +
         '<div class="col-prod-sku">' + cursor.value.sku + '</div>' +
-        '<div class="col-prod-qty"> <input type="text" class="form-control" id="CartProdQty" value="' + cursor.value.qty + '" readonly></div>' + 
+        '<div class="col-prod-qty"> <input type="text" class="form-control CartProdQty"  value="' + cursor.value.qty + '" readonly></div>' + 
 				'<div class="col-prod-uom">' + cursor.value.uom + '</div>' +
-        '<div class="col-prod-price"> <input type="text" class="form-control" id="CartProdPrice" value="' + cursor.value.price + '" readonly></div>' +
-        '<div class="col-prod-discount"><input type="text" class="form-control" id="CartProdDiscount" value="' + cursor.value.discount + '" readonly ></div>' +
+        '<div class="col-prod-price"> <input type="text" class="form-control CartProdPrice"  value="' + cursor.value.price + '" readonly></div>' +
+        '<div class="col-prod-discount"><input type="text" class="form-control CartProdDiscount"  value="' + cursor.value.discount + '" readonly ></div>' +
         '<div class="col-prod-comment">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div>' +
         '<div class="col-prod-del">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
         '</div>');
@@ -367,8 +408,37 @@ function loadProducts(orderId) {
 
   } else {
     $('.records-header').after(cartProducts); // no more events
+    calculateTotal();
   }
 };
+}
+
+function calculateTotal() {
+
+/* calculate totalqty */
+var totalqty = 0;
+
+$('.CartProdQty').each(function() {
+  totalqty += parseFloat(this.value);
+});
+
+$('#totalqty').html(totalqty);
+
+/* calculate subTotal and  totaldiscount*/
+var subtotal = 0;
+var totaldiscount = 0;
+var totalshipping = 0;
+
+$('.record-item').each(function() {
+  subtotal += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val();
+  totaldiscount += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val() * parseFloat($(this).find(".CartProdDiscount").val()) / 100;
+});
+
+var totalamount = subtotal - totaldiscount - totalshipping;
+$('#subtotal').html(subtotal);
+$('#totaldiscount').html(totaldiscount);
+$('#totalshipping').html(totalshipping);
+$('#totalamount').html(totalamount);
 }
 
 
