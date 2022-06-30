@@ -108,21 +108,16 @@ a:hover{
 }
 
 .records-section .col-prod-select,
-.records-section .col-prod-del {
-  width: 4%;
-}
-
+.records-section .col-prod-del,
 .records-section .col-record-id,
 .records-section .col-prod-img {
-  width: 5%;
+  width: 4%;
 }
-
-.records-section .col-prod-comment {
-  width: 10%;
+.records-section .col-prod-discount {
+  width: 6%;
 }
-
 .records-section .col-prod-title {
-  width: 18%;
+  width: 15%;
 }
 
 .products-section .col-prod-select,
@@ -168,15 +163,43 @@ a:hover{
 .order-details-section .col-record-id{
   width: 14%;
 }
+/*Import CSV modal */
+.modal-content{
+  border-radius: 24px;
+  font-size: 12px;
+  color:#6B6B6B;
+}
+.content-inner{
+  margin: 3rem 0;
+}
+
+#importCsvModal .modal-body{
+  padding: 3rem;
+}
+#importCsvModal i{
+  font-size:160px;
+  margin-bottom: 1rem;
+}
+#importCsvModal li{
+  margin-bottom: 0.5rem;
+}
+#importCsvModal ul li::marker {
+     font-size: 32px;
+     line-height: 15px;
+ }
+ #importCsvModal ul li span{
+  margin-top: -6px;
+  float: left;
+
+ }
 /*Save order modal */
 #saveOrderModal .modal-body{
   padding: 3rem;
 
 }
-#saveOrderModal .fas{
+#saveOrderModal i{
   font-size:160px;
-
-
+  margin-bottom: 1rem;
 }
 /*Sidebar Style */
 #sidebar {
