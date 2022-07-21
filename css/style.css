@@ -58,6 +58,7 @@ a:hover{
 .header .subnavbar {
   background-color: #f8f9fa;
   border-bottom: 1px solid #ADADAD;
+  padding: 1rem 1.5rem;
 }
 .header .subnavbar .fas, .header .subnavbar .fad, .header .subnavbar .fal{
   margin-right: 0.5rem;
@@ -68,16 +69,81 @@ a:hover{
 }
 .header .subnavbar .convert-action-btn{
   margin-left: 1rem;
-
+  font-size: 14px;
+}
+.header .subnavbar .btn{
+    font-size: 11px;
+}
+.mobile-heading, .record-item .accordion-header{
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .header .navbar{
+    padding: 0.5rem;
+  }
+  .mobile-heading, .record-item .accordion-header{
+    display: block;
+  }
+  .record-item .accordion-header{
+    padding: 0;  
+  }
+  .header .subnavbar span, .header .navbar .nav-right-col, .records-header, .col-prod-select{
+    display: none !important;
+  }
+  .header .subnavbar .subnavbar-info-mid i, .header .subnavbar .subnavbar-info-right i {
+    margin: 0;
+    font-size: 14px;
+  }
+  .header .subnavbar .container-fluid{
+    padding: 0;
+  }
+  .header .subnavbar .subnavbar-info-left{
+    width: 100%;
+    margin-bottom: 0.875rem;
+  }
+  .header .subnavbar .subnavbar-info-left h4{
+    font-size: 20px;
+  }
+  .header .subnavbar .btn-secondary{
+    background: none;
+    border: none;
+    color: #000;
+  }
+  .w-m-100{
+    width: 100% !important;
+  }
+  .record-item .accordion-collapse .accordion-body .mobile-heading{
+    width: 50% !important;
+    text-align: right;
+    padding-right:1rem ;
+    border-right: 1px solid rgba(0, 0, 0, .125);
+  }
+  .col-content{
+     width: 50% !important;
+     text-align: left;
+    padding-left:1rem ;
+  }
+  .records-section .accordion-button .col-record-id, .records-section .accordion-button .col-prod-img{
+    width: 10% !important;
+    margin-right: 10px;
+  }
+  .records-section .accordion-button .col-prod-title{
+    width: 80% !important;
+  }
 }
 /*Content style */
+
 .records-section {
   margin-top: 1rem;
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, .125);
   border-radius: 0.25rem;
 }
+.records-section .accordion-item, .records-section .accordion-item .accordion-body{
+  padding: 0;
+  border: none;
 
+}
 .records-section .col-prod-img img {
   max-width: 32px;
 }
@@ -92,7 +158,7 @@ a:hover{
 }
 
 .records-section .records-header>*,
-.records-section .record-item>* {
+.records-section .record-item .accordion-collapse .accordion-body>* {
   display: flex;
   width: 9%;
   text-align: center;
@@ -103,20 +169,31 @@ a:hover{
 }
 
 .order-list-section .records-header>*,
-.order-list-section .record-item>* {
+.order-list-section .record-item .accordion-collapse .accordion-body>* {
   width: 10%;
 }
-
-.records-section .col-prod-select,
-.records-section .col-prod-del,
-.records-section .col-record-id,
-.records-section .col-prod-img {
-  width: 4%;
+.records-section .records-header .col-prod-select,
+.records-section .records-header .col-prod-del,
+.records-section .records-header .col-record-id,
+.records-section .records-header .col-prod-img,
+.records-section .accordion-collapse .accordion-body .col-prod-select,
+.records-section .accordion-collapse .accordion-body .col-prod-del,
+.records-section .accordion-collapse .accordion-body .col-record-id,
+.records-section .accordion-collapse .accordion-body .col-prod-img {
+  width: 4% ;
 }
-.records-section .col-prod-discount {
+.order-list-section .records-header .col-record-id,
+.order-list-section .accordion-collapse .accordion-body .col-record-id
+{
+  width: 15%;
+}
+.records-section .records-header .col-prod-discount,
+.records-section .accordion-collapse .accordion-body .col-prod-discount
+{
   width: 6%;
 }
-.records-section .col-prod-title {
+.records-section .records-header .col-prod-title,
+.records-section .accordion-collapse .accordion-body .col-prod-title {
   width: 15%;
 }
 
@@ -170,7 +247,7 @@ a:hover{
   color:#6B6B6B;
 }
 .content-inner{
-  margin: 3rem 0;
+  padding: 1.5rem;
 }
 
 #importCsvModal .modal-body{
@@ -203,8 +280,8 @@ a:hover{
 }
 /*Sidebar Style */
 #sidebar {
-  min-width: 240px;
-  max-width: 240px;
+  min-width: 200px;
+  max-width: 200px;
   background: #CCCCCC;
   color: #fff;
   -webkit-transition: all 0.3s;
@@ -213,8 +290,8 @@ a:hover{
 }
 
 #sidebar.active {
-  min-width: 80px;
-  max-width: 80px;
+  min-width: 48px;
+  max-width: 48px;
   text-align: center;
 }
 
@@ -297,7 +374,7 @@ a:hover{
 #sidebar .with-submenu .sub-menu{
   background: #707070;
   position: absolute;
-  left: 240px;
+  left: 200px;
   z-index: 10;
   margin-left: 0;
   height: 100%;

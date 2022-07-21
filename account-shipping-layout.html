@@ -238,7 +238,23 @@
   </main>
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/flatpickr.js"></script>
   <script src="js/main.js"></script>
+  <script>
+  /* Datepicker  */
+  var fp = flatpickr(".date", {
+    dateFormat: "d/m/yy",
+    allowInput: true,
+    onOpen: function(selectedDates, dateStr, instance) {
+      $(instance.altInput).prop('readonly', true);
+    },
+    onClose: function(selectedDates, dateStr, instance) {
+      $(instance.altInput).prop('readonly', false);
+      $(instance.altInput).blur();
+    }
+
+  })
+</script>
 
 </body>
 

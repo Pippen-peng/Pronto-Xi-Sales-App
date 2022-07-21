@@ -1,479 +1,473 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/"/>
-    <meta name="generator" content="PRONTO-Xi Avenue">
-    <title>Order Details - Pronto Xi Sales App</title>
-    <link
-    rel="stylesheet" href="css/fontawesome.css">
-    <!-- Bootstrap core CSS -->
-    <link
-    href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="PRONTO-Xi Avenue http://prontoavenue.biz/" />
+  <meta name="generator" content="PRONTO-Xi Avenue">
+  <title>Order Details - Pronto Xi Sales App</title>
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Flatpickr Datepicker CSS -->
+  <link rel="stylesheet" href="css/flatpickr.min.css">
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-    <!-- Flatpickr Datepicker CSS -->
-    <link rel="stylesheet" href="css/flatpickr.min.css">
-    <!-- Custom styles -->
-    <link
-    href="css/style.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-    <!-- Begin page content -->
-    <main class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar" class="active">
-        <h1>
-          <a href="index.html" class="logo">W</a>
-        </h1>
-        <div class="sidebar-toggle">
-          <button type="button" id="sidebarCollapse" class="btn sidebar-toggle-btn ">
-            <i class="fal fa-angle-double-right"></i>
-            <span class="sr-only">Toggle Menu</span>
-          </button>
-        </div>
-        <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="#">
-              <i class="fal fa-cubes"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <li class="with-submenu">
-            <a href="order.html">
-              <i class="fal fa-shopping-bag"></i>
-              <span>Orders</span>
-            </a>
-            <ul class="sub-menu">
-              <li>
-                <a href="#">Add Sale order</a>
-              </li>
-              <li>
-                <a href="#">View Sale order</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="products.html">
-              <i class="fal fa-calculator"></i>
-              <span>Products</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-tasks"></i>
-              <span>Tasks</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-store"></i>
-              <span>Storefront</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-stamp"></i>
-              <span>Deals</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-address-book"></i>
-              <span>
-                Contacts</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fal fa-chart-line"></i>
-              <span>
-                Reports</span>
-            </a>
-          </li>
-        </ul>
-        <div class="footer"></div>
-      </nav>
-      <div id="content">
-        <div
-          class="header">
-          <!-- Fixed navbar -->
-          <nav class="navbar navbar-expand-md">
-            <div class="container-fluid">
-              <div class="favourite-block col-1">
-                <i class="fal fa-star"></i>
-              </div>
-              <div class="search-block col-5 d-flex">
-                <form class="w-100">
-                  <input
-                  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<body>
+  <!-- Begin page content -->
+  <main class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+      <h1>
+        <a href="index.html" class="logo">W</a>
+      </h1>
+      <div class="sidebar-toggle">
+        <button type="button" id="sidebarCollapse" class="btn sidebar-toggle-btn ">
+          <i class="fal fa-angle-double-right"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="#">
+            <i class="fal fa-cubes"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="with-submenu">
+          <a href="order.html">
+            <i class="fal fa-shopping-bag"></i>
+            <span>Orders</span>
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a href="#">Add Sale order</a>
+            </li>
+            <li>
+              <a href="#">View Sale order</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="products.html">
+            <i class="fal fa-calculator"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-tasks"></i>
+            <span>Tasks</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-store"></i>
+            <span>Storefront</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-stamp"></i>
+            <span>Deals</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-address-book"></i>
+            <span>
+              Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fal fa-chart-line"></i>
+            <span>
+              Reports</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer"></div>
+    </nav>
+    <div id="content">
+      <div class="header">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md">
+          <div class="container-fluid">
+            <div class="favourite-block col-1">
+              <i class="fal fa-star"></i>
+            </div>
+            <div class="search-block col-5 d-flex">
+              <form class="w-100">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                </form>
-                <i class="fal fa-plus-circle ms-2"></i>
+              </form>
+              <i class="fal fa-plus-circle ms-2"></i>
+            </div>
+            <div class="col-3 nav-right-col">
+              <div class="message-block">
+                <i class="fal fa-bell"></i>
               </div>
-              <div class="col-3 nav-right-col">
-                <div class="message-block">
-                  <i class="fal fa-bell"></i>
-                </div>
-                <div class="shopping-block">
-                  <i class="fal fa-store"></i>
-                  Storefront
-                </div>
-                <div class="user-block">
-                  <div class="user-name-block">TG</div>
-                  Minifood pty ltd
-                </div>
+              <div class="shopping-block">
+                <i class="fal fa-store"></i>
+                Storefront
+              </div>
+              <div class="user-block">
+                <div class="user-name-block">TG</div>
+                Minifood pty ltd
               </div>
             </div>
-          </nav>
-          <div class="subnavbar py-2 px-5">
-            <div class="container-fluid d-flex align-items-md-center">
-              <div class="me-auto d-flex align-items-center">
-                <i class="fal fa-shopping-bag"></i>
-                <h4>Order details for <span id="titleorderID"></span><h4>
-              </div>
-              <div class="ms-auto">
-                <button type="button" class="btn btn-secondary">
-                  <i class="fas fa-envelope"></i>EMAIL</button>
-                <button type="button" class="btn btn-secondary">
-                  <i class="fad fa-print"></i>PRINT</button>
-                <!-- <button type="button" class="btn btn-secondary">
+          </div>
+        </nav>
+        <div class="subnavbar py-2 px-5">
+          <div class="container-fluid d-flex align-items-md-center">
+            <div class="me-auto d-flex align-items-center">
+              <i class="fal fa-shopping-bag"></i>
+              <h4>Order details for <span id="titleorderID"></span>
+                <h4>
+            </div>
+            <div class="ms-auto">
+              <button type="button" class="btn btn-secondary">
+                <i class="fas fa-envelope"></i>EMAIL</button>
+              <button type="button" class="btn btn-secondary">
+                <i class="fad fa-print"></i>PRINT</button>
+              <!-- <button type="button" class="btn btn-secondary">
                   <i class="fas fa-save"></i>SAVE ORDER</button>
                 <button type="button" class="btn btn-black" onclick="addToOrder()">REVIEW ORDER</button> -->
-              </div>
             </div>
           </div>
         </div>
-        <div class="content-inner p-4 p-md-5">
-          <div class="row">
-            <div class="account-section col-6">
-              <div class="card ">
-                <div class="card-body">
-                  <h4>Customer Account</h4>
-                  <p>Choose the account name to check their
-                  </p>
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="mb-3 row">
-                        <input type="hidden" class="form-control" id="companyId">
-
-                        <label for="search-account-name" class="col-sm-5 col-form-label">Company Name</label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" id="search-account-name" readonly>
-                        </div>
-                      </div>
-                      <div class="mb-3 row">
-                        <label for="customercode" class="col-sm-5 col-form-label">Customer Code</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="customercode" readonly>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="mb-3 row">
-                        <label for="contactname" class="col-sm-5 col-form-label">Contact Name</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactname" readonly>
-                        </div>
-                      </div>
-                      <div class="mb-3 row">
-                        <label for="contactemail" class="col-sm-5 col-form-label">Contact Email</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactemail" readonly>
-                        </div>
-                      </div>
-                      <div class="mb-3 row">
-                        <label for="contactphone" class="col-sm-5 col-form-label">Contact Phone</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="contactphone" readonly>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="shipping-section col-6">
-              <div class="card ">
-                <div class="card-body">
-                  <h4>Shipping Information</h4>
-                  <div class="mb-3 row">
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" id="deliveryMethod" readonly>
-
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <label for="shippingdate" class="col-sm-4 col-form-label">Shipping By</label>
-                        <div class="col-sm-8 ">
-                          <div class="input-group">
-                            <input type="text" class="form-control date" id="ShippingDate" readonly>
-                            <span class="input-group-text"><i class="fal fa-calendar-alt"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <div class="col-12">
-                      <input type="text" class="form-control" id="shippingaddress" readonly>
-
-                    </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <div class="col-12">
-                      <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control" readonly></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="records-section order-details-section">
-            <div class="records-header row  g-2 g-lg-3">
-              <div class="col-prod-select">
-                <input type="checkbox" id="selectall" name="selectall" value="selectall">
-              </div>
-              <div class="col-record-id">
-                No.
-              </div>
-              <div class="col-prod-img">
-                Img
-              </div>
-              <div class="col-prod-title">
-                Product
-              </div>
-              <div class="col-prod-sku">
-                Sku
-              </div>
-              <div class="col-prod-qty">
-                Qty
-              </div>
-              <div class="col-prod-uom">
-                Uom
-              </div>
-              <div class="col-prod-price">
-                Price
-              </div>
-              <div class="col-prod-discount">
-                Discount
-              </div>
-              <div class="col-prod-comment">
-                Comment
-              </div>
-              <div class="col-prod-del"></div>
-            </div>
-            <div id="record-bottom"></div>
-          </div>
-          <div class="subtotal-section col-lg-3 float-end mt-3">
-            <div class="row totalqty">
-              <div class="col-md-8 col-sm-6 title">
-                Quantity
-              </div>
-              <div id="totalqty" class="col-md-4 col-sm-6 text-end">
-              </div>
-            </div>
-            <div class="row subtotal ">
-              <div class="col-md-8 col-sm-6 title">
-                Subtotal
-              </div>
-              <div id="subtotal" class="col-md-4 col-sm-6 text-end">
-              </div>
-            </div>
-            <div class="row totaldiscount ">
-              <div class="col-md-8 col-sm-6 title">
-                Discount
-              </div>
-              <div id="totaldiscount" class="col-md-4 col-sm-6 text-end">
-              </div>
-            </div>
-            <div class="row totalshipping ">
-              <div class="col-md-8 col-sm-6 title">
-                Shipping
-              </div>
-              <div id="totalshipping" class="col-md-4 col-sm-6 text-end">
-              </div>
-            </div>
-            <div class="row totalamount">
-              <div class="col-md-8 col-sm-6 title">
-                Total
-              </div>
-              <div id="totalamount" class="col-md-4 col-sm-6 text-end">
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </main>
-    <script src="js/jquery-3.6.0.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/autocomplete.js"></script>
-    <script src="js/flatpickr.js"></script>
-    <script src="js/main.js"></script>
+      <div class="content-inner ">
+        <div class="row">
+          <div class="account-section col-6">
+            <div class="card ">
+              <div class="card-body">
+                <h4>Customer Account</h4>
+                <p>Choose the account name to check their
+                </p>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3 row">
+                      <input type="hidden" class="form-control" id="companyId">
+                      <label for="search-account-name" class="col-sm-5 col-form-label">Company Name</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="search-account-name" readonly>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="customercode" class="col-sm-5 col-form-label">Customer Code</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="customercode" readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3 row">
+                      <label for="contactname" class="col-sm-5 col-form-label">Contact Name</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="contactname" readonly>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="contactemail" class="col-sm-5 col-form-label">Contact Email</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="contactemail" readonly>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="contactphone" class="col-sm-5 col-form-label">Contact Phone</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="contactphone" readonly>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shipping-section col-6">
+            <div class="card ">
+              <div class="card-body">
+                <h4>Shipping Information</h4>
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="deliveryMethod" readonly>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <label for="shippingdate" class="col-sm-4 col-form-label">Shipping By</label>
+                      <div class="col-sm-8 ">
+                        <div class="input-group">
+                          <input type="text" class="form-control date" id="ShippingDate" readonly>
+                          <span class="input-group-text"><i class="fal fa-calendar-alt"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <div class="col-12">
+                    <input type="text" class="form-control" id="shippingaddress" readonly>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <div class="col-12">
+                    <textarea id="shippingnote" name="shippingnote" rows="4" class="form-control" readonly></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="records-section order-details-section">
+          <div class="records-header row ">
+            <div class="col-prod-select">
+              <input type="checkbox" id="selectall" name="selectall" value="selectall">
+            </div>
+            <div class="col-record-id">
+              No.
+            </div>
+            <div class="col-prod-img">
+              Img
+            </div>
+            <div class="col-prod-title">
+              Product
+            </div>
+            <div class="col-prod-sku">
+              Sku
+            </div>
+            <div class="col-prod-qty">
+              Qty
+            </div>
+            <div class="col-prod-uom">
+              Uom
+            </div>
+            <div class="col-prod-price">
+              Price
+            </div>
+            <div class="col-prod-discount">
+              Discount
+            </div>
+            <div class="col-prod-comment">
+              Comment
+            </div>
+            <div class="col-prod-del"></div>
+          </div>
+          <div id="record-bottom"></div>
+        </div>
+        <div class="subtotal-section col-lg-3 float-end mt-3">
+          <div class="row totalqty">
+            <div class="col-md-8 col-sm-6 title">
+              Quantity
+            </div>
+            <div id="totalqty" class="col-md-4 col-sm-6 text-end">
+            </div>
+          </div>
+          <div class="row subtotal ">
+            <div class="col-md-8 col-sm-6 title">
+              Subtotal
+            </div>
+            <div id="subtotal" class="col-md-4 col-sm-6 text-end">
+            </div>
+          </div>
+          <div class="row totaldiscount ">
+            <div class="col-md-8 col-sm-6 title">
+              Discount
+            </div>
+            <div id="totaldiscount" class="col-md-4 col-sm-6 text-end">
+            </div>
+          </div>
+          <div class="row totalshipping ">
+            <div class="col-md-8 col-sm-6 title">
+              Shipping
+            </div>
+            <div id="totalshipping" class="col-md-4 col-sm-6 text-end">
+            </div>
+          </div>
+          <div class="row totalamount">
+            <div class="col-md-8 col-sm-6 title">
+              Total
+            </div>
+            <div id="totalamount" class="col-md-4 col-sm-6 text-end">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/autocomplete.js"></script>
+  <script src="js/flatpickr.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  var url = $(location).attr('href').replace(/\/+$/, ''), //rtrim `/`
+    parts = url.split("#"),
+    orderId = parts[parts.length - 1];
 
-    <script>
-      var url =  $(location).attr('href').replace(/\/+$/,''), //rtrim `/`
-          parts = url.split("#"),
-          orderId = parts[parts.length-1];
+  var db;
+  var request = window.indexedDB.open("newDatabase", 1);
 
-var db;
-var request = window.indexedDB.open("newDatabase", 1);
+  request.onerror = function(event) {
+    console.log("error: ");
+  };
 
-request.onerror = function(event) {
-  console.log("error: ");
-};
+  request.onsuccess = function(event) {
+    db = request.result;
+    console.log("success: " + db);
+    loadOrderDetails(orderId);
+    loadProducts(orderId);
+    $('#titleorderID').html(orderId);
+  };
 
-request.onsuccess = function(event) {
-  db = request.result;
-  console.log("success: " + db);
-  loadOrderDetails(orderId);
-  loadProducts(orderId);
-  $('#titleorderID').html(orderId);
-};
-
-request.onupgradeneeded = function(event) {
-  var db = event.target.result;
-  var objectStore = db.createObjectStore("customer", {
-    keyPath: "id", autoIncrement:true
-  });
-  // var objectStore2 = db.createObjectStore("product", {
-  //   keyPath: "id", autoIncrement:true
-  // });
-	// var objectStore3 = db.createObjectStore("cart", {
-  //   keyPath: "id", autoIncrement:true
-  // });
-	var objectStore4 = db.createObjectStore("order", {
-    keyPath: "id", autoIncrement:true
-  });
-	var objectStore5 = db.createObjectStore("order_lines", {
-    keyPath: "id", autoIncrement:true
-  });
+  request.onupgradeneeded = function(event) {
+    var db = event.target.result;
+    var objectStore = db.createObjectStore("customer", {
+      keyPath: "id",
+      autoIncrement: true
+    });
+    // var objectStore2 = db.createObjectStore("product", {
+    //   keyPath: "id", autoIncrement:true
+    // });
+    // var objectStore3 = db.createObjectStore("cart", {
+    //   keyPath: "id", autoIncrement:true
+    // });
+    var objectStore4 = db.createObjectStore("order", {
+      keyPath: "id",
+      autoIncrement: true
+    });
+    var objectStore5 = db.createObjectStore("order_lines", {
+      keyPath: "id",
+      autoIncrement: true
+    });
   }
 
-function loadOrderDetails(orderId) {
-var companyId='';
-var objectStore4 = db.transaction("order").objectStore("order");
-objectStore4.openCursor().onsuccess = function(event) {
-  var cursor = event.target.result;
-  if (cursor) {
-    if (cursor.key = orderId) {
-       $('#deliveryMethod').val(cursor.value.deliveryMethod);
-       $('#ShippingDate').val(cursor.value.shippingDate);
-       $('#shippingaddress').val(cursor.value.shippingaddress);
-       $('#shippingnote').val(cursor.value.shippingnote);
-       $('#companyId').val(cursor.value.companyId);
-       $('#subtotal').html(cursor.value.subtotal);
-       $('#totaldiscount').html(cursor.value.totaldiscount);
-       $('#totalshipping').html(cursor.value.totalshipping);
-      // $('#totalamount').html(cursor.value.totalamount);
+  function loadOrderDetails(orderId) {
+    var companyId = '';
+    var objectStore4 = db.transaction("order").objectStore("order");
+    objectStore4.openCursor().onsuccess = function(event) {
+      var cursor = event.target.result;
+      if (cursor) {
+        if (cursor.key = orderId) {
+          $('#deliveryMethod').val(cursor.value.deliveryMethod);
+          $('#ShippingDate').val(cursor.value.shippingDate);
+          $('#shippingaddress').val(cursor.value.shippingaddress);
+          $('#shippingnote').val(cursor.value.shippingnote);
+          $('#companyId').val(cursor.value.companyId);
+          $('#subtotal').html(cursor.value.subtotal);
+          $('#totaldiscount').html(cursor.value.totaldiscount);
+          $('#totalshipping').html(cursor.value.totalshipping);
+          // $('#totalamount').html(cursor.value.totalamount);
 
-    }
-    cursor.continue(); // wait for next event
+        }
+        cursor.continue(); // wait for next event
 
-  } else {
-    loadCustomer();
+      } else {
+        loadCustomer();
+      }
+    };
   }
-};
-}
 
-function loadProducts(orderId) {
-  var cartProducts = "";
-  var objectStore5 = db.transaction("order_lines").objectStore("order_lines");
-  objectStore5.openCursor().onsuccess = function(event) {
-  var cursor = event.target.result;
-  if (cursor) {
-    if (cursor.value.orderId === orderId) {
+  function loadProducts(orderId) {
+    var cartProducts = "";
+    var objectStore5 = db.transaction("order_lines").objectStore("order_lines");
+    objectStore5.openCursor().onsuccess = function(event) {
+      var cursor = event.target.result;
+      if (cursor) {
+        if (cursor.value.orderId === orderId) {
 
-     // console.log("value:", cursor.value.orderId);
-      cartProducts = cartProducts.concat('<div id="product'+ cursor.key +'" class="record-item row ">' +
-        '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall" >' + '</div>' +
-        '<div class="col-record-id">' + cursor.key + '</div>' +
-        '<div class="col-prod-img">' + ' <img src="img/image-solid.svg">' + '</div>' +
-        '<div class="col-prod-title">' + cursor.value.product + '</div>' +
-        '<div class="col-prod-sku">' + cursor.value.sku + '</div>' +
-        '<div class="col-prod-qty"> <input type="text" class="form-control CartProdQty"  value="' + cursor.value.qty + '" readonly></div>' + 
-				'<div class="col-prod-uom">' + cursor.value.uom + '</div>' +
-        '<div class="col-prod-price"> <input type="text" class="form-control CartProdPrice"  value="' + cursor.value.price + '" readonly></div>' +
-        '<div class="col-prod-discount"><input type="text" class="form-control CartProdDiscount"  value="' + cursor.value.discount + '" readonly ></div>' +
-        '<div class="col-prod-comment">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div>' +
-        '<div class="col-prod-del">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
-        '</div>');
-    }
-    cursor.continue(); // wait for next event
+          // console.log("value:", cursor.value.orderId);
 
-  } else {
-    $('.records-header').after(cartProducts); // no more events
-    calculateTotal();
+          cartProducts = cartProducts.concat('<div id="product-row' + cursor.key + '" class="record-item row accordion-item">' +
+            '<h2 class="accordion-header" id="heading' + cursor.key + '"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product' + cursor.key + '" aria-expanded="true" aria-controls="product' + cursor.key + '"><div class="col-record-id">' + cursor.key + '</div><div class="col-prod-img">' +
+            '<img src="img/image-solid.svg">' + '</div><div class="col-prod-title">' + cursor.value.product + '</div></button></h2>' +
+            '<div id="product' + cursor.key + '" class="accordion-collapse collapse show " aria-labelledby="headingOne" data-bs-parent="#accordionExample"><div class="accordion-body row"><div class="col-prod-select d-none d-sm-block">' +
+            '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div><div class="col-record-id d-none d-sm-block">' + cursor.key + '</div>' +
+            '<div class="col-prod-img d-none d-sm-block">' + ' <img src="img/image-solid.svg">' + '</div>' +
+            '<div class="col-prod-title d-none d-sm-block">' + cursor.value.product + '</div>' +
+            '<div class="col-prod-sku w-m-100"><div class="mobile-heading">Sku</div><div class="col-content">' + cursor.value.sku + '</div></div>' +
+            '<div class="col-prod-qty w-m-100"><div class="mobile-heading">Qty</div><div class="col-content"> <input type="text" class="form-control CartProdQty"  value="' + cursor.value.qty + '"></div></div>' +
+            '<div class="col-prod-uom w-m-100"><div class="mobile-heading">Uom</div><div class="col-content">' + cursor.value.uom + '</div></div>' +
+
+            '<div class="col-prod-price w-m-100"><div class="mobile-heading">Price</div><div class="col-content"> <input type="text" class="form-control CartProdPrice"  value="' + cursor.value.price + '"></div></div>' +
+            '<div class="col-prod-discount w-m-100"><div class="mobile-heading">Discount</div><div class="col-content"><input type="text" class="form-control CartProdDiscount"  value="' + cursor.value.discount + '" ></div></div>' +
+            '<div class="col-prod-comment w-m-100"><div class="mobile-heading">Comment</div><div class="col-content">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div></div>' +
+            '<div class="col-prod-del w-m-100">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
+            '</div></div></div>');
+        }
+        cursor.continue(); // wait for next event
+
+      } else {
+        $('.records-header').after(cartProducts); // no more events
+        calculateTotal();
+      }
+    };
   }
-};
-}
 
-function calculateTotal() {
+  function calculateTotal() {
 
-/* calculate totalqty */
-var totalqty = 0;
+    /* calculate totalqty */
+    var totalqty = 0;
 
-$('.CartProdQty').each(function() {
-  totalqty += parseFloat(this.value);
-});
+    $('.CartProdQty').each(function() {
+      totalqty += parseFloat(this.value);
+    });
 
-$('#totalqty').html(totalqty);
+    $('#totalqty').html(totalqty);
 
-/* calculate subTotal and  totaldiscount*/
-var subtotal = 0;
-var totaldiscount = 0;
-var totalshipping = 0;
+    /* calculate subTotal and  totaldiscount*/
+    var subtotal = 0;
+    var totaldiscount = 0;
+    var totalshipping = 0;
 
-$('.record-item').each(function() {
-  subtotal += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val();
-  totaldiscount += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val() * parseFloat($(this).find(".CartProdDiscount").val()) / 100;
-});
+    $('.record-item').each(function() {
+      subtotal += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val();
+      totaldiscount += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val() * parseFloat($(this).find(".CartProdDiscount").val()) / 100;
+    });
 
-var totalamount = subtotal - totaldiscount - totalshipping;
-$('#subtotal').html(subtotal);
-$('#totaldiscount').html(totaldiscount);
-$('#totalshipping').html(totalshipping);
-$('#totalamount').html(totalamount);
-}
-
-
-/* Autofill cutomer info  */
-
-function loadCustomer() {
-
-  var companyId = $('#companyId').val();
-
-var objectStore = db.transaction("customer").objectStore("customer");
-objectStore.openCursor().onsuccess = function(event) {
-  var cursor = event.target.result;
-  if (cursor) {
-    if (cursor.key = companyId) {
-      var customercompany = cursor.value.company;
-       var customercode = cursor.value.code;
-       var contactname = cursor.value.name;
-       var contactemail = cursor.value.email;
-       var contactphone = cursor.value.phone;
-      $('#search-account-name').val(customercompany);
-      $('#customercode').val(customercode);
-      $('#contactname').val(contactname);
-      $('#contactemail').val(contactemail);
-      $('#contactphone').val(contactphone);
-
-    }
-    cursor.continue(); // wait for next event
-
-  } else {
-
+    var totalamount = subtotal - totaldiscount - totalshipping;
+    $('#subtotal').html(subtotal);
+    $('#totaldiscount').html(totaldiscount);
+    $('#totalshipping').html(totalshipping);
+    $('#totalamount').html(totalamount);
   }
-};
-}
 
-    </script>
-  </body>
+
+  /* Autofill cutomer info  */
+
+  function loadCustomer() {
+
+    var companyId = $('#companyId').val();
+
+    var objectStore = db.transaction("customer").objectStore("customer");
+    objectStore.openCursor().onsuccess = function(event) {
+      var cursor = event.target.result;
+      if (cursor) {
+        if (cursor.key = companyId) {
+          var customercompany = cursor.value.company;
+          var customercode = cursor.value.code;
+          var contactname = cursor.value.name;
+          var contactemail = cursor.value.email;
+          var contactphone = cursor.value.phone;
+          $('#search-account-name').val(customercompany);
+          $('#customercode').val(customercode);
+          $('#contactname').val(contactname);
+          $('#contactemail').val(contactemail);
+          $('#contactphone').val(contactphone);
+
+        }
+        cursor.continue(); // wait for next event
+
+      } else {
+
+      }
+    };
+  }
+  </script>
+</body>
 
 </html>

@@ -2,6 +2,7 @@
 $('#sidebarCollapse').on('click', function() {
   $('#sidebar').toggleClass('active');
 });
+
 /* Get content max height */
 var navHeight = $('.navbar').height();
 var subnavbarHeight = $('.subnavbar').height();

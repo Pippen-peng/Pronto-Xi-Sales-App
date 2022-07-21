@@ -92,16 +92,15 @@
       </ul>
       <div class="footer"></div>
     </nav>
-
     <div id="content">
       <div class="header">
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md">
           <div class="container-fluid">
-            <div class="favourite-block col-1">
+            <div class="favourite-block col-2 col-sm-1">
               <i class="fal fa-star"></i>
             </div>
-            <div class="search-block col-5 d-flex">
+            <div class="search-block col-10 col-sm-5 d-flex">
               <form class="w-100">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
@@ -123,19 +122,85 @@
             </div>
           </div>
         </nav>
-        <div class="subnavbar py-2 px-5">
+        <div class="subnavbar">
           <div class="container-fluid d-flex align-items-md-center">
-            <div class="me-auto d-flex align-items-center">
-              <h2>All Orders</h2>
-            </div>
-            <div class="ms-auto">
-              <button type="button" class="btn btn-secondary" onclick="addToOrder()">
-                <i class="fas fa-save"></i>SAVE ALL CHANGES</button>
+            <div class="subnavbar-info-left d-flex align-items-center">
+              <i class="fal fa-shopping-bag"></i>
+              <h4>Orders</h4>
             </div>
           </div>
         </div>
       </div>
-      <div class="content-inner p-4 p-md-5">
+      <div class="content-inner">
+        <div class="order-filter-section">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFilter">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
+                <i class="fal fa-sliders-h me-2"></i>
+                Show Filters
+              </button>
+            </h2>
+            <div id="collapseFilter" class="accordion-collapse collapse" aria-labelledby="headingFilter">
+              <div class="accordion-body row">
+                <div class="filter-col col">
+                  <div class="filter-heading">
+                    STATUS
+                  </div>
+                  <div class="filter-content ">
+                    <select class="form-select">
+                      <option selected>Open</option>
+                      <option value="parked">Parked</option>
+                      <option value="placed">Placed</option>
+                      <option value="completed">Completed</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="filter-col col">
+                  <div class="filter-heading">
+                    ORDER NUMBER
+                  </div>
+                  <div class="filter-content">
+                    <input type="text" class="form-control" id="orderNumber">
+                  </div>
+                </div>
+                <div class="filter-col col">
+                  <div class="filter-heading">
+                    CUSTOMER
+                  </div>
+                  <div class="filter-content">
+                    <input type="text" class="form-control" id="orderCustomer">
+                  </div>
+                </div>
+                <div class="filter-col col">
+                  <div class="filter-heading">
+                    ORDER DATE FROM
+                  </div>
+                  <div class="filter-content">
+                    <div class="input-group">
+                      <input type="text" class="form-control date" id="ShippingDate">
+                      <span class="input-group-text">
+                        <i class="fal fa-calendar-alt"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-col col">
+                  <div class="filter-heading">
+                    ORDER DATE TO
+                  </div>
+                  <div class="filter-content">
+                    <div class="input-group">
+                      <input type="text" class="form-control date" id="ShippingDate">
+                      <span class="input-group-text">
+                        <i class="fal fa-calendar-alt"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="records-section order-list-section">
           <div class="records-header row">
             <div class="col-prod-select">
@@ -179,6 +244,19 @@
   <script src="js/flatpickr.js"></script>
   <script src="js/main.js"></script>
   <script>
+  /* Datepicker  */
+  var fp = flatpickr(".date", {
+    dateFormat: "d/m/yy",
+    allowInput: true,
+    onOpen: function(selectedDates, dateStr, instance) {
+      $(instance.altInput).prop('readonly', true);
+    },
+    onClose: function(selectedDates, dateStr, instance) {
+      $(instance.altInput).prop('readonly', false);
+      $(instance.altInput).blur();
+    }
+
+  })
   /* Load all products */
   var db;
   var request = window.indexedDB.open("newDatabase", 1);
@@ -214,18 +292,17 @@
     objectStore4.openCursor().onsuccess = function(event) {
       var cursor = event.target.result;
       if (cursor) {
-        OrderList = OrderList.concat('<div class="record-item row ">' +
-          '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div>' +
-          '<div class="col-record-id"><a href="order-details.html#' + cursor.value.orderId + '">' + cursor.value.orderId + '</a></div>' +
-          '<div class="col-prod-title">' + cursor.value.customerName + '</div>' +
-          '<div class="col-prod-sku"> </div>' +
-          '<div class="col-prod-qty">' + cursor.value.totalamount + ' </div>' +
-          '<div class="col-prod-uom">' + cursor.value.paidamount + '</div>' +
-          '<div class="col-prod-availability">'+ cursor.value.createDate + '</div>' +
-          '<div class="col-prod-price"> </div>' +
-          '<div class="col-prod-discount"></div>' +
-          '<div class="col-prod-comment">'+ cursor.value.shippingDate + '</div>' +
-          '</div>');
+        OrderList = OrderList.concat('<div class="record-item row accordion-item"><h2 class="accordion-header" id="heading' + cursor.key + '"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + cursor.key + '" aria-expanded="true" aria-controls="collapse' + cursor.key + '">' + cursor.value.orderId + '</button></h2>' +
+          '<div id="collapse' + cursor.key + '" class="accordion-collapse collapse show" aria-labelledby="heading' + cursor.key + '" data-bs-parent="#accordionExample"><div class="accordion-body row"><div class="col-prod-select d-none d-sm-block"><input type="checkbox" id="selectall" name="selectall" value="selectall"></div><div class="col-record-id d-none d-sm-block"><a href="order-details.html#' + cursor.value.orderId + '">' + cursor.value.orderId + '</a></div>' +
+          '<div class="col-prod-title w-m-100"><div class="mobile-heading">CUSTOMER NAME</div><div class="col-content">' + cursor.value.customerName + '</div></div>' +
+          '<div class="col-prod-sku w-m-100"><div class="mobile-heading">STATUS</div><div class="col-content">Parked </div></div>' +
+          '<div class="col-prod-qty w-m-100"><div class="mobile-heading">TOTAL</div><div class="col-content">' + cursor.value.totalamount + ' </div></div>' +
+          '<div class="col-prod-uom w-m-100"><div class="mobile-heading">PAID</div><div class="col-content">' + cursor.value.paidamount + '</div></div>' +
+          '<div class="col-prod-availability w-m-100"><div class="mobile-heading">ORDER DATE</div><div class="col-content">' + cursor.value.createDate + '</div></div>' +
+          '<div class="col-prod-price w-m-100"><div class="mobile-heading">PAYMENT DUE</div><div class="col-content"></div>' + cursor.value.shippingDate + '</div>' +
+          '<div class="col-prod-discount w-m-100"><div class="mobile-heading">SALES REP</div><div class="col-content">Tony</div></div>' +
+          '<div class="col-prod-comment w-m-100"><div class="mobile-heading">SHIPPING BY</div><div class="col-content">' + cursor.value.shippingDate + '</div></div>' +
+          '</div></div></div>');
 
         cursor.continue(); // wait for next event
       } else {
@@ -236,7 +313,6 @@
     };
 
   }
-
   </script>
 </body>
 

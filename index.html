@@ -97,10 +97,10 @@
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md">
           <div class="container-fluid">
-            <div class="favourite-block col-1">
+            <div class="favourite-block col-2 col-sm-1">
               <i class="fal fa-star"></i>
             </div>
-            <div class="search-block col-5 d-flex">
+            <div class="search-block col-10 col-sm-5 d-flex">
               <div class="w-100">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
@@ -122,28 +122,30 @@
             </div>
           </div>
         </nav>
-        <div class="subnavbar py-2 px-5">
-          <div class="container-fluid d-flex align-items-md-center">
-            <div class="me-auto d-flex align-items-center">
+        <div class="subnavbar">
+          <div class="container-fluid d-flex align-items-md-center flex-wrap justify-content-between">
+            <div class="subnavbar-info-left d-flex align-items-center">
               <i class="fal fa-shopping-bag"></i>
               <h4>ON-0000136</h4>
               <a class="convert-action-btn">Convert to quote</a>
             </div>
-            <div class="ms-auto">
+            <div class="subnavbar-info-mid ">
               <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#importCsvModal">
-                <i class="fas fa-envelope"></i>IMPORT CSV FILE</button>
+                <i class="fas fa-envelope"></i><span>IMPORT CSV FILE</span></button>
+            </div>
+            <div class="subnavbar-info-right ">
               <button type="button" class="btn btn-secondary">
-                <i class="fas fa-envelope"></i>EMAIL</button>
+                <i class="fas fa-envelope"></i><span>EMAIL</span></button>
               <button type="button" class="btn btn-secondary">
-                <i class="fad fa-print"></i>PRINT</button>
+                <i class="fad fa-print"></i><span>PRINT</span></button>
               <button type="button" class="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#saveOrderModal">
-                <i class="fas fa-save"></i>SAVE ORDER</button>
+                <i class="fas fa-save"></i><span>SAVE ORDER</span></button>
               <button type="button" class="btn btn-black " onclick="addToOrder()">REVIEW ORDER</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="content-inner  p-4 p-md-5">
+      <div class="content-inner">
         <form class="needs-validation" novalidate>
           <div class="row">
             <div class="account-section col-12">
@@ -258,16 +260,16 @@
             <div><i class="fas fa-wifi-slash"></i></div>
             <h5>ORDER SAVED!</h5>
             <p>You can confirm your order when the network is restored. <br>You won’t lose any information as the order will be saved under your OPEN ORDERS.</p>
-             <div class="text-center">
-            <a href="order.html" class="btn btn-secondary ">
-              <span>GO TO ORDER LIST</span>
-            </a>
-          </div>
-           <div class="text-center mt-3">
-            <a href="index.html" class="" data-bs-dismiss="modal" aria-label="Close">
-              <span>START A NEW ORDER</span>
-            </a>
-          </div>
+            <div class="text-center">
+              <a href="order.html" class="btn btn-secondary ">
+                <span>GO TO ORDER LIST</span>
+              </a>
+            </div>
+            <div class="text-center mt-3">
+              <a href="index.html" class="" data-bs-dismiss="modal" aria-label="Close">
+                <span>START A NEW ORDER</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -549,21 +551,21 @@
     objectStore3.openCursor().onsuccess = function(event) {
       var cursor = event.target.result;
       if (cursor) {
-        cartProducts = cartProducts.concat('<div id="product' + cursor.key + '" class="record-item row ">' +
-          '<div class="col-prod-select">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div>' +
-          '<div class="col-record-id">' + cursor.key + '</div>' +
-          '<div class="col-prod-img">' + ' <img src="img/image-solid.svg">' + '</div>' +
-          '<div class="col-prod-title">' + cursor.value.title + '</div>' +
-          '<div class="col-prod-sku">' + cursor.value.sku + '</div>' +
-          '<div class="col-prod-qty"> <input type="text" class="form-control CartProdQty"  value="' + cursor.value.qty + '"></div>' +
-          '<div class="col-prod-uom">' + cursor.value.uom + '</div>' +
-          '<div class="col-prod-availability">' + cursor.value.availability + '</div>' +
-          '<div class="col-prod-price"> <input type="text" class="form-control CartProdPrice"  value="' + cursor.value.price + '"></div>' +
-          '<div class="col-prod-discount"><input type="text" class="form-control CartProdDiscount"  value="' + cursor.value.discount + '" ></div>' +
-          '<div class="col-prod-subtotal CartProdSubtotal"></div>' +
-          '<div class="col-prod-comment">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div>' +
-          '<div class="col-prod-del">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
-          '</div>');
+        cartProducts = cartProducts.concat('<div id="product-row' + cursor.key + '" class="record-item row accordion-item">' +
+          '<h2 class="accordion-header" id="heading' + cursor.key + '"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product' + cursor.key + '" aria-expanded="true" aria-controls="product' + cursor.key + '"><div class="col-record-id">' + cursor.key + '</div><div class="col-prod-img">' + ' <img src="img/image-solid.svg">' + '</div><div class="col-prod-title">' + cursor.value.title + '</div></button></h2>' +
+          '<div id="product' + cursor.key + '" class="accordion-collapse collapse show " aria-labelledby="headingOne" data-bs-parent="#accordionExample"><div class="accordion-body row"><div class="col-prod-select d-none d-sm-block">' + '<input type="checkbox" id="selectall" name="selectall" value="selectall">' + '</div><div class="col-record-id d-none d-sm-block">' + cursor.key + '</div>' +
+          '<div class="col-prod-img d-none d-sm-block">' + ' <img src="img/image-solid.svg">' + '</div>' +
+          '<div class="col-prod-title d-none d-sm-block">' + cursor.value.title + '</div>' +
+          '<div class="col-prod-sku w-m-100"><div class="mobile-heading">Sku</div><div class="col-content">' + cursor.value.sku + '</div></div>' +
+          '<div class="col-prod-qty w-m-100"><div class="mobile-heading">Qty</div><div class="col-content"> <input type="text" class="form-control CartProdQty"  value="' + cursor.value.qty + '"></div></div>' +
+          '<div class="col-prod-uom w-m-100"><div class="mobile-heading">Uom</div><div class="col-content">' + cursor.value.uom + '</div></div>' +
+          '<div class="col-prod-availability w-m-100"><div class="mobile-heading">Available</div><div class="col-content">' + cursor.value.availability + '</div></div>' +
+          '<div class="col-prod-price w-m-100"><div class="mobile-heading">Price</div><div class="col-content"> <input type="text" class="form-control CartProdPrice"  value="' + cursor.value.price + '"></div></div>' +
+          '<div class="col-prod-discount w-m-100"><div class="mobile-heading">Discount</div><div class="col-content"><input type="text" class="form-control CartProdDiscount"  value="' + cursor.value.discount + '" ></div></div>' +
+          '<div class="col-prod-subtotal CartProdSubtotal w-m-100"><div class="mobile-heading">Subtotal</div><div class="col-content"></div></div>' +
+          '<div class="col-prod-comment w-m-100"><div class="mobile-heading">Comment</div><div class="col-content">' + '<i class="fad fa-comment" data-bs-toggle="tooltip" data-bs-placement="top" title="' + cursor.value.comment + '" ></i>' + '</div></div>' +
+          '<div class="col-prod-del w-m-100">' + '<i id=' + cursor.key + ' class="fal fa-trash-alt prod-del"  onclick="deleteCartProduct(this.id)"></i>' + '</div>' +
+          '</div></div></div>');
         order_products.push({ "name": cursor.value.title, "id": cursor.key });
         cursor.continue(); // wait for next event
 
@@ -603,7 +605,7 @@
 
       CartProdSubtotal = $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val() * (1 - parseFloat($(this).find(".CartProdDiscount").val()) / 100);
 
-      $(this).find(".CartProdSubtotal").html(CartProdSubtotal);
+      $(this).find(".CartProdSubtotal .col-content").html(CartProdSubtotal);
 
 
       subtotal += $(this).find(".CartProdQty").val() * $(this).find(".CartProdPrice").val();
